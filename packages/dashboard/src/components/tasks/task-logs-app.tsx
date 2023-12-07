@@ -6,7 +6,7 @@ import { createMicroApp } from '../micro-app';
 import { RmfAppContext } from '../rmf-app';
 import { TaskLogs } from './task-logs';
 
-export const TaskLogsApp = createMicroApp('Task Logs', () => {
+export const TaskLogsApp = createMicroApp('작업 로그', () => {
   const rmf = React.useContext(RmfAppContext);
   const [taskState, setTaskState] = React.useState<TaskState | null>(null);
   const [taskLogs, setTaskLogs] = React.useState<TaskEventLog | null>(null);

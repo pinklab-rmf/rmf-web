@@ -7,7 +7,7 @@ import { createMicroApp } from '../micro-app';
 import { RmfAppContext } from '../rmf-app';
 import { RobotSummary } from './robot-summary';
 
-export const RobotsApp = createMicroApp('Robots', () => {
+export const RobotsApp = createMicroApp('로봇', () => {
   const rmf = React.useContext(RmfAppContext);
 
   const [fleets, setFleets] = React.useState<string[]>([]);

@@ -6,7 +6,7 @@ import { createMicroApp } from './micro-app';
 import { RmfAppContext } from './rmf-app';
 import { getApiErrorMessage } from './utils';
 
-export const DoorsApp = createMicroApp('Doors', () => {
+export const DoorsApp = createMicroApp('문', () => {
   const rmf = React.useContext(RmfAppContext);
   const [buildingMap, setBuildingMap] = React.useState<BuildingMap | null>(null);
   const [doorTableData, setDoorTableData] = React.useState<Record<string, DoorTableData>>({});

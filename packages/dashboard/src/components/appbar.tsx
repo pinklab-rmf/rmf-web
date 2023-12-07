@@ -389,7 +389,7 @@ export const AppBar = React.memo(({ extraToolbarItems }: AppBarProps): React.Rea
           >
             <AddOutlined />새 작업
           </Button>
-          <Tooltip title="Notifications">
+          <Tooltip title="알림">
             <IconButton
               id="alert-list-button"
               aria-label="alert-list-button"

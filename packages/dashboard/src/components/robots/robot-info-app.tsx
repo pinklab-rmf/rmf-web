@@ -7,7 +7,7 @@ import { AppEvents } from '../app-events';
 import { createMicroApp } from '../micro-app';
 import { RmfAppContext } from '../rmf-app';
 
-export const RobotInfoApp = createMicroApp('Robot Info', () => {
+export const RobotInfoApp = createMicroApp('로봇 정보', () => {
   const rmf = React.useContext(RmfAppContext);
 
   const [robotState, setRobotState] = React.useState<RobotState | null>(null);
@@ -75,7 +75,7 @@ export const RobotInfoApp = createMicroApp('Robot Info', () => {
           sx={{ display: 'flex', height: '100%', alignItems: 'center', justifyContent: 'center' }}
         >
           <Typography variant="h6" align="center">
-            Click on a robot to view more information
+            로봇을 클릭하여 더 많은 정보를 확인하세요
           </Typography>
         </Box>
       )}

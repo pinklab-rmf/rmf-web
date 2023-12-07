@@ -10,7 +10,7 @@ import { createMicroApp } from '../micro-app';
 import { Enforcer } from '../permissions';
 import { RmfAppContext } from '../rmf-app';
 
-export const TaskDetailsApp = createMicroApp('Task Details', () => {
+export const TaskDetailsApp = createMicroApp('작업 세부정보', () => {
   const theme = useTheme();
   const rmf = React.useContext(RmfAppContext);
   const appController = React.useContext(AppControllerContext);
@@ -43,16 +43,16 @@ export const TaskDetailsApp = createMicroApp('Task Details', () => {
     }
     try {
       if (!rmf) {
-        throw new Error('tasks api not available');
+        throw new Error('작업 API 사용 불가');
       }
       await rmf.tasksApi?.postCancelTaskTasksCancelTaskPost({
         type: 'cancel_task_request',
         task_id: taskState.booking.id,
       });
-      appController.showAlert('success', 'Successfully cancelled task');
+      appController.showAlert('success', '작업이 성공적으로 취소되었습니다');
       AppEvents.taskSelect.next(null);
     } catch (e) {
-      appController.showAlert('error', `Failed to cancel task: ${(e as Error).message}`);
+      appController.showAlert('error', `작업 취소 실패: ${(e as Error).message}`);
     }
   }, [appController, taskState, rmf]);
 
@@ -73,7 +73,7 @@ export const TaskDetailsApp = createMicroApp('Task Details', () => {
               disabled={!taskCancellable}
               onClick={handleCancelTaskClick}
             >
-              Cancel Task
+              작업 취소
             </Button>
           </Grid>
         </>
@@ -81,7 +81,7 @@ export const TaskDetailsApp = createMicroApp('Task Details', () => {
         <Grid container wrap="nowrap" alignItems="center" style={{ height: '100%' }}>
           <CardContent>
             <Typography variant="h6" align="center">
-              Click on a task to view more information
+              작업을 클릭하여 더 많은 정보를 확인하세요
             </Typography>
           </CardContent>
         </Grid>

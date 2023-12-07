@@ -254,7 +254,7 @@ export const RobotSummary = React.memo(({ onClose, robot }: RobotSummaryProps) =
       <Grid container mb={1} alignItems="center" spacing={1}>
         <Grid item xs={2}></Grid>
         <Grid item xs={8}>
-          <DialogTitle align="center">Robot summary: {robotState?.name}</DialogTitle>
+          <DialogTitle align="center">로봇 개요: {robotState?.name}</DialogTitle>
         </Grid>
         <Grid item xs={2}>
           <Grid container justifyContent="flex-end">
@@ -271,7 +271,7 @@ export const RobotSummary = React.memo(({ onClose, robot }: RobotSummaryProps) =
       {taskProgress && (
         <>
           <Typography variant="body2" fontWeight="bold" ml={3} mt={1}>
-            Task progress
+            작업 진행 상황
           </Typography>
           <Box component="div" sx={{ width: '95%', ml: 3 }}>
             <LinearProgressWithLabel value={taskProgress * 100} />
@@ -287,7 +287,7 @@ export const RobotSummary = React.memo(({ onClose, robot }: RobotSummaryProps) =
           autoFocus
           disabled={taskState === null}
         >
-          Inspect Task
+          작업 확인
         </Button>
       </DialogActions>
       {openTaskDetailsLogs && taskState && (

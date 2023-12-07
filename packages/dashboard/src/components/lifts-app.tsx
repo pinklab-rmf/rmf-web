@@ -5,7 +5,7 @@ import { createMicroApp } from './micro-app';
 import { RmfAppContext } from './rmf-app';
 import { getApiErrorMessage } from './utils';
 
-export const LiftsApp = createMicroApp('Lifts', () => {
+export const LiftsApp = createMicroApp('리프트', () => {
   const rmf = React.useContext(RmfAppContext);
   const [buildingMap, setBuildingMap] = React.useState<BuildingMap | null>(null);
   const [liftTableData, setLiftTableData] = React.useState<Record<string, LiftTableData[]>>({});

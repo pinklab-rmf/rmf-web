@@ -252,12 +252,12 @@ export const TasksApp = React.memo(
       return (
         <Window
           ref={ref}
-          title="Tasks"
+          title="작업"
           onClose={onClose}
           toolbar={
             <Toolbar variant="dense">
               <div>
-                <Tooltip title="Download" placement="top">
+                <Tooltip title="다운로드" placement="top">
                   <IconButton
                     id="export-button"
                     aria-controls={openExportMenu ? 'export-menu' : undefined}
@@ -285,7 +285,7 @@ export const TasksApp = React.memo(
                     }}
                     disableRipple
                   >
-                    Export Minimal
+                    최소 정보로 내보내기
                   </MenuItem>
                   <MenuItem
                     onClick={() => {
@@ -294,11 +294,11 @@ export const TasksApp = React.memo(
                     }}
                     disableRipple
                   >
-                    Export Full
+                    전체 내보내기
                   </MenuItem>
                 </Menu>
               </div>
-              <Tooltip title="Refresh" color="inherit" placement="top">
+              <Tooltip title="새로고침" color="inherit" placement="top">
                 <IconButton
                   onClick={() => {
                     AppEvents.refreshTaskApp.next();
@@ -314,12 +314,12 @@ export const TasksApp = React.memo(
         >
           <Tabs value={selectedPanelIndex} onChange={handlePanelChange} aria-label="Task App Tabs">
             <Tab
-              label="Queue"
+              label="대기열"
               id={tabId(TaskTablePanel.QueueTable)}
               aria-controls={tabPanelId(TaskTablePanel.QueueTable)}
             />
             <Tab
-              label="Schedule"
+              label="일정표"
               id={tabId(TaskTablePanel.Schedule)}
               aria-controls={tabPanelId(TaskTablePanel.Schedule)}
             />

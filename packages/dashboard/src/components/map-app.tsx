@@ -52,7 +52,7 @@ function getRobotId(fleetName: string, robotName: string): string {
 }
 
 export const MapApp = styled(
-  createMicroApp('Map', () => {
+  createMicroApp('지도', () => {
     const rmf = React.useContext(RmfAppContext);
     const resourceManager = React.useContext(ResourcesContext);
     const [currentLevel, setCurrentLevel] = React.useState<Level | undefined>(undefined);
@@ -548,7 +548,7 @@ export const MapApp = styled(
                 linewidth={5}
               />
             ))}
-          {!disabledLayers['Robots'] &&
+          {!disabledLayers['로봇'] &&
             robots.map((robot) => {
               const robotId = `${robot.fleet}/${robot.name}`;
               if (robotId in robotLocations) {
