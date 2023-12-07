@@ -137,7 +137,7 @@ export function DoorDataGridTable({ doors }: DoorDataGridTableProps): JSX.Elemen
   const columns: GridColDef[] = [
     {
       field: 'doorName',
-      headerName: 'Name',
+      headerName: '이름',
       width: 90,
       valueGetter: (params: GridValueGetterParams) => params.row.doorName,
       flex: 1,
@@ -155,7 +155,7 @@ export function DoorDataGridTable({ doors }: DoorDataGridTableProps): JSX.Elemen
     },
     {
       field: 'levelName',
-      headerName: 'Current Floor',
+      headerName: '현재 층',
       width: 150,
       editable: false,
       valueGetter: (params: GridValueGetterParams) => params.row.levelName,
@@ -165,7 +165,7 @@ export function DoorDataGridTable({ doors }: DoorDataGridTableProps): JSX.Elemen
     },
     {
       field: 'doorType',
-      headerName: 'Type',
+      headerName: '종류',
       width: 150,
       editable: false,
       valueGetter: (params: GridValueGetterParams) => doorTypeToString(params.row.doorType),
@@ -175,7 +175,7 @@ export function DoorDataGridTable({ doors }: DoorDataGridTableProps): JSX.Elemen
     },
     {
       field: 'doorState',
-      headerName: 'Door State',
+      headerName: '문 상태',
       width: 150,
       editable: false,
       flex: 1,
@@ -206,7 +206,7 @@ export function DoorDataGridTable({ doors }: DoorDataGridTableProps): JSX.Elemen
         columns={columns}
         rowsPerPageOptions={[5]}
         localeText={{
-          noRowsLabel: 'No doors available.',
+          noRowsLabel: '사용가능한 문이 없습니다.',
         }}
         initialState={{
           sorting: {

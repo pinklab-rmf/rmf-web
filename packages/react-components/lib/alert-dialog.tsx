@@ -162,7 +162,7 @@ export const AlertDialog = React.memo((props: DialogAlertProps) => {
           }}
           autoFocus
         >
-          {acknowledged ? 'Close' : 'Dismiss'}
+          {acknowledged ? 'Close' : '닫기'}
         </Button>
       </DialogActions>
     </Dialog>

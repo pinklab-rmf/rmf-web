@@ -144,7 +144,7 @@ export function LiftDataGridTable({ lifts }: LiftDataGridTableProps): JSX.Elemen
   const columns: GridColDef[] = [
     {
       field: 'name',
-      headerName: 'Name',
+      headerName: '이름',
       width: 90,
       valueGetter: (params: GridValueGetterParams) => params.row.name,
       flex: 1,
@@ -160,7 +160,7 @@ export function LiftDataGridTable({ lifts }: LiftDataGridTableProps): JSX.Elemen
     },
     {
       field: 'currentFloor',
-      headerName: 'Current Floor',
+      headerName: '현재 층',
       width: 150,
       editable: false,
       valueGetter: (params: GridValueGetterParams) =>
@@ -170,7 +170,7 @@ export function LiftDataGridTable({ lifts }: LiftDataGridTableProps): JSX.Elemen
     },
     {
       field: 'destinationFloor',
-      headerName: 'Destination Floor',
+      headerName: '목적지 층',
       width: 150,
       editable: false,
       valueGetter: (params: GridValueGetterParams) =>
@@ -180,7 +180,7 @@ export function LiftDataGridTable({ lifts }: LiftDataGridTableProps): JSX.Elemen
     },
     {
       field: 'liftState',
-      headerName: 'Lift State',
+      headerName: '리프트 상태',
       width: 150,
       editable: false,
       flex: 1,
@@ -210,7 +210,7 @@ export function LiftDataGridTable({ lifts }: LiftDataGridTableProps): JSX.Elemen
         columns={columns}
         rowsPerPageOptions={[5]}
         localeText={{
-          noRowsLabel: 'No lifts available.',
+          noRowsLabel: '사용가능한 리프트가 없습니다.',
         }}
         initialState={{
           sorting: {

@@ -88,12 +88,12 @@ function AppSettings() {
   const appController = React.useContext(AppControllerContext);
   return (
     <FormControl>
-      <FormLabel id="theme-label">Theme</FormLabel>
+      <FormLabel id="theme-label">테마</FormLabel>
       <RadioGroup row aria-labelledby="theme-label">
         <FormControlLabel
           value={ThemeMode.Default}
           control={<Radio />}
-          label="Default"
+          label="기본모드"
           checked={settings.themeMode === ThemeMode.Default}
           onChange={() =>
             appController.updateSettings({ ...settings, themeMode: ThemeMode.Default })
@@ -102,7 +102,7 @@ function AppSettings() {
         <FormControlLabel
           value={ThemeMode.RmfLight}
           control={<Radio />}
-          label="RMF Light"
+          label="RMF 라이트모드"
           checked={settings.themeMode === ThemeMode.RmfLight}
           onChange={() =>
             appController.updateSettings({ ...settings, themeMode: ThemeMode.RmfLight })
@@ -111,7 +111,7 @@ function AppSettings() {
         <FormControlLabel
           value={ThemeMode.RmfDark}
           control={<Radio />}
-          label="RMF Dark"
+          label="RMF 다크모드"
           checked={settings.themeMode === ThemeMode.RmfDark}
           onChange={() =>
             appController.updateSettings({ ...settings, themeMode: ThemeMode.RmfDark })
@@ -340,33 +340,33 @@ export const AppBar = React.memo(({ extraToolbarItems }: AppBarProps): React.Rea
         <LogoButton src={brandingIconPath} alt="logo" sx={{ width: logoSize }} />
         <NavigationBar value={tabValue}>
           <AppBarTab
-            label="Map"
+            label="지도"
             value="infrastructure"
-            aria-label="Map"
+            aria-label="지도"
             onTabClick={() => navigate(DashboardRoute)}
           />
           <AppBarTab
-            label="System Overview"
+            label="시스템 개요"
             value="robots"
-            aria-label="System Overview"
+            aria-label="시스템 개요"
             onTabClick={() => navigate(RobotsRoute)}
           />
           <AppBarTab
-            label="Tasks"
+            label="작업"
             value="tasks"
-            aria-label="Tasks"
+            aria-label="작업"
             onTabClick={() => navigate(TasksRoute)}
           />
           <AppBarTab
-            label="Custom 1"
+            label="커스텀 1"
             value="custom1"
             aria-label="Custom 1"
             onTabClick={() => navigate(CustomRoute1)}
           />
           <AppBarTab
-            label="Custom 2"
+            label="커스텀 2"
             value="custom2"
-            aria-label="Custom 2"
+            aria-label="커스텀 2"
             onTabClick={() => navigate(CustomRoute2)}
           />
           {profile?.user.is_admin && (
@@ -381,14 +381,13 @@ export const AppBar = React.memo(({ extraToolbarItems }: AppBarProps): React.Rea
         <Toolbar variant="dense" sx={{ textAlign: 'right', flexGrow: -1 }}>
           <Button
             id="create-new-task-button"
-            aria-label="new task"
+            aria-label="새 작업"
             color="secondary"
             variant="contained"
             size="small"
             onClick={() => setOpenCreateTaskForm(true)}
           >
-            <AddOutlined />
-            New Task
+            <AddOutlined />새 작업
           </Button>
           <Tooltip title="Notifications">
             <IconButton
@@ -458,27 +457,27 @@ export const AppBar = React.memo(({ extraToolbarItems }: AppBarProps): React.Rea
           <Divider orientation="vertical" sx={{ marginLeft: 1, marginRight: 2 }} />
           <Typography variant="caption">Powered by Open-RMF</Typography>
           {extraToolbarItems}
-          <Tooltip title="Settings">
+          <Tooltip title="설정">
             <IconButton
               id="show-settings-btn"
-              aria-label="settings"
+              aria-label="설정"
               color="inherit"
               onClick={(ev) => setSettingsAnchor(ev.currentTarget)}
             >
               <Settings />
             </IconButton>
           </Tooltip>
-          <Tooltip title="Help">
+          <Tooltip title="도움말">
             <IconButton
               id="show-help-btn"
-              aria-label="help"
+              aria-label="도움말"
               color="inherit"
               onClick={() => window.open(resourceManager?.helpLink, '_blank')}
             >
               <Help />
             </IconButton>
           </Tooltip>
-          <Tooltip title="Report issues">
+          <Tooltip title="알려진 문제들">
             <IconButton
               id="show-warning-btn"
               aria-label="warning"
@@ -490,7 +489,7 @@ export const AppBar = React.memo(({ extraToolbarItems }: AppBarProps): React.Rea
           </Tooltip>
           {profile && (
             <>
-              <Tooltip title="Profile">
+              <Tooltip title="프로필">
                 <IconButton
                   id="user-btn"
                   aria-label={'user-btn'}
@@ -514,7 +513,7 @@ export const AppBar = React.memo(({ extraToolbarItems }: AppBarProps): React.Rea
                 onClose={() => setAnchorEl(null)}
               >
                 <MenuItem id="logout-btn" onClick={handleLogout}>
-                  Logout
+                  로그아웃
                 </MenuItem>
               </Menu>
             </>

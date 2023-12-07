@@ -75,7 +75,7 @@ export function RobotDataGridTable({ onRobotClick, robots }: RobotDataGridTableP
   const columns: GridColDef[] = [
     {
       field: 'name',
-      headerName: 'Name',
+      headerName: '이름',
       width: 150,
       editable: false,
       valueGetter: (params: GridValueGetterParams) => params.row.name,
@@ -84,7 +84,7 @@ export function RobotDataGridTable({ onRobotClick, robots }: RobotDataGridTableP
     },
     {
       field: 'fleet',
-      headerName: 'Fleet',
+      headerName: '플릿',
       width: 90,
       valueGetter: (params: GridValueGetterParams) => params.row.fleet,
       flex: 1,
@@ -92,7 +92,7 @@ export function RobotDataGridTable({ onRobotClick, robots }: RobotDataGridTableP
     },
     {
       field: 'estFinishTime',
-      headerName: 'Est. Task Finish Time',
+      headerName: '예상 종료 시간',
       width: 150,
       editable: false,
       valueGetter: (params: GridValueGetterParams) =>
@@ -102,7 +102,7 @@ export function RobotDataGridTable({ onRobotClick, robots }: RobotDataGridTableP
     },
     {
       field: 'level',
-      headerName: 'Level',
+      headerName: '레벨',
       width: 150,
       editable: false,
       valueGetter: (params: GridValueGetterParams) => params.row.level,
@@ -111,7 +111,7 @@ export function RobotDataGridTable({ onRobotClick, robots }: RobotDataGridTableP
     },
     {
       field: 'battery',
-      headerName: 'Battery',
+      headerName: '배터리',
       width: 150,
       editable: false,
       valueGetter: (params: GridValueGetterParams) => `${params.row.battery * 100}%`,
@@ -120,7 +120,7 @@ export function RobotDataGridTable({ onRobotClick, robots }: RobotDataGridTableP
     },
     {
       field: 'lastUpdateTime',
-      headerName: 'Last Updated',
+      headerName: '마지막 업데이트',
       width: 150,
       editable: false,
       valueGetter: (params: GridValueGetterParams) =>
@@ -130,7 +130,7 @@ export function RobotDataGridTable({ onRobotClick, robots }: RobotDataGridTableP
     },
     {
       field: 'status',
-      headerName: 'Status',
+      headerName: '상태',
       editable: false,
       flex: 1,
       renderCell: Status,
@@ -148,6 +148,9 @@ export function RobotDataGridTable({ onRobotClick, robots }: RobotDataGridTableP
       columns={columns}
       rowsPerPageOptions={[5]}
       onRowClick={handleEvent}
+      localeText={{
+        noRowsLabel: '사용가능한 로봇이 없습니다.',
+      }}
       initialState={{
         sorting: {
           sortModel: [{ field: 'name', sort: 'asc' }],

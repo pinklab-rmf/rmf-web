@@ -85,22 +85,22 @@ export function AppBase({ children }: React.PropsWithChildren<{}>): JSX.Element 
       <AlertDialog
         key="display-alert"
         onDismiss={dismissDisplayAlert}
-        title="Low display resolution detected"
+        title="낮은 디스플레이 해상도가 감지되었습니다."
         alertContents={[
           {
-            title: 'Current resolution',
+            title: '현재 해상도',
             value: `${window.innerWidth} x ${window.innerHeight}`,
           },
           {
-            title: 'Minimum recommended resolution',
+            title: '최소 권장 해상도',
             value: '1920 x 1080',
           },
           {
-            title: 'Message',
+            title: '메시지',
             value:
-              'To ensure maximum compatibility, please reduce the zoom ' +
-              'level in the browser (Ctrl-Minus) or display settings, ' +
-              'or change to a higher resolution display device.',
+              '최대한 호환성을 보장하려면 줌을 줄여주세요. ' +
+              '브라우저의 수준(Ctrl + -)또는 디스플레이를 설정하세요. ' +
+              '또는 더 높은 해상도의 디스플레이 장치로 전환해주세요.',
           },
         ]}
         backgroundColor={theme.palette.background.default}
