@@ -152,7 +152,7 @@ export function LiftDataGridTable({ lifts }: LiftDataGridTableProps): JSX.Elemen
     },
     {
       field: 'opMode',
-      headerName: 'Op. Mode',
+      headerName: '운영 모드',
       width: 90,
       flex: 1,
       renderCell: OpModeState,

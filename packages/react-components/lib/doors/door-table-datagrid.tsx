@@ -120,7 +120,7 @@ export function DoorDataGridTable({ doors }: DoorDataGridTableProps): JSX.Elemen
           sx={{ marginRight: 2 }}
           onClick={params.row.onClickOpen}
         >
-          Open
+          열기
         </Button>
         <Button
           variant="contained"
@@ -128,7 +128,7 @@ export function DoorDataGridTable({ doors }: DoorDataGridTableProps): JSX.Elemen
           aria-label="close"
           onClick={params.row.onClickClose}
         >
-          Close
+          닫기
         </Button>
       </Box>
     );
@@ -145,7 +145,7 @@ export function DoorDataGridTable({ doors }: DoorDataGridTableProps): JSX.Elemen
     },
     {
       field: 'opMode',
-      headerName: 'Op. Mode',
+      headerName: '운영 모드',
       width: 150,
       editable: false,
       flex: 1,

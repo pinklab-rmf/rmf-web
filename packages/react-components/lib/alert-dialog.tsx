@@ -120,7 +120,7 @@ export const AlertDialog = React.memo((props: DialogAlertProps) => {
       {progress ? (
         <>
           <Typography variant="body2" fontWeight="bold" ml={3} mt={1}>
-            Task progress
+            작업 진행 상황
           </Typography>
           <Box component="div" width={0.95} ml={3}>
             <LinearProgressWithLabel value={progress} />
@@ -132,7 +132,7 @@ export const AlertDialog = React.memo((props: DialogAlertProps) => {
       <DialogActions>
         {onInspect ? (
           <Button size="small" variant="contained" onClick={onInspect} disabled={false} autoFocus>
-            Inspect
+            검사
           </Button>
         ) : null}
         {acknowledged ? (
@@ -150,7 +150,7 @@ export const AlertDialog = React.memo((props: DialogAlertProps) => {
             disabled={false}
             autoFocus
           >
-            Acknowledge
+            승인
           </Button>
         )}
         <Button

@@ -24,7 +24,7 @@ export const Demo: Story<WindowContainerProps> = () => {
           counter.current = defaultLayout.length - 1;
         }}
       >
-        Reset
+        초기화
       </button>
       <button
         onClick={() =>
@@ -34,7 +34,7 @@ export const Demo: Story<WindowContainerProps> = () => {
           ])
         }
       >
-        Add
+        추가
       </button>
       <button onClick={() => setDesignMode(!designMode)}>
         {designMode ? 'Normal Mode' : 'Design Mode'}

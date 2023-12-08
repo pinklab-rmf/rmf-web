@@ -75,15 +75,15 @@ export function TaskInfo({ task, title }: TaskInfoProps): JSX.Element {
       <Divider />
       <div style={{ marginBottom: theme.spacing(1) }}></div>
       <InfoLine>
-        <span>Status:</span>
+        <span>상태:</span>
         <InfoValue>{task.status || 'unknown'}</InfoValue>
       </InfoLine>
       <InfoLine>
-        <span>Start Waypoint:</span>
+        <span>시작 지점:</span>
         <InfoValue>{startWaypoint}</InfoValue>
       </InfoLine>
       <InfoLine>
-        <span>Finish Waypoint</span>
+        <span>종료 지점</span>
         <InfoValue>{finishWaypoint}</InfoValue>
       </InfoLine>
       <div style={{ padding: '4px' }}>

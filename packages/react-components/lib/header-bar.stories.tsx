@@ -41,10 +41,10 @@ export const NavBar: Story = () => {
           </NavigationBar>
         </HeaderBar>
         <TabPanel key={'building-panel'} value={'building'}>
-          <Typography variant="caption">tab panel data</Typography>
+          <Typography variant="caption">탭 패널 데이터</Typography>
         </TabPanel>
         <TabPanel key={'robots-panel'} value={'robots'}>
-          <Typography variant="caption">other tab panel data</Typography>
+          <Typography variant="caption">다른 탭 패널 데이터</Typography>
         </TabPanel>
       </TabContext>
     </>
@@ -106,10 +106,10 @@ export const FullHeaderBar: Story = () => {
           </Toolbar>
         </HeaderBar>
         <TabPanel key={'building-panel'} value={'building'}>
-          <Typography variant="caption">tab panel data</Typography>
+          <Typography variant="caption">탭 패널 데이터</Typography>
         </TabPanel>
         <TabPanel key={'robots-panel'} value={'robots'}>
-          <Typography variant="caption">other tab panel data</Typography>
+          <Typography variant="caption">다른 탭 패널 데이터</Typography>
         </TabPanel>
       </TabContext>
     </FullHeaderBarStory>

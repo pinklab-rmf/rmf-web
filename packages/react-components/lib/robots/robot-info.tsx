@@ -69,7 +69,7 @@ export function RobotInfo({
         </Grid>
         <Grid container item xs={12} justifyContent="center">
           <Typography variant="h6" gutterBottom>
-            Assigned Tasks
+            할당된 작업
           </Typography>
         </Grid>
         <Grid container item xs={12} justifyContent="center">
@@ -85,12 +85,12 @@ export function RobotInfo({
         </Grid>
         <Grid item xs={6}>
           <Typography variant="h6" align="left">
-            Battery
+            배터리
           </Typography>
         </Grid>
         <Grid item xs={6}>
           <Typography variant="h6" align="left">
-            <span>{!hasConcreteEndTime && 'Est. '}Finish Time</span>
+            <span>{!hasConcreteEndTime && 'Est. '}종료 시간</span>
           </Typography>
         </Grid>
         <Grid item xs={6}>

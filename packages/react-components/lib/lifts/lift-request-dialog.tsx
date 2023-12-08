@@ -94,15 +94,15 @@ export const LiftRequestDialog = ({
     let isValid = true;
     cleanUpError();
     if (requestType === null) {
-      setRequestTypeError('Request type cannot be empty');
+      setRequestTypeError('요청 유형을 채워주세요');
       isValid = false;
     }
     if (doorState === null) {
-      setDoorStateError('Door state cannot be empty');
+      setDoorStateError('문 상태를 채워주세요');
       isValid = false;
     }
     if (!destination) {
-      setDestinationError('Destination cannot be empty');
+      setDestinationError('목적지를 채워주세요');
       isValid = false;
     }
 
@@ -127,9 +127,9 @@ export const LiftRequestDialog = ({
       fullWidth={true}
       maxWidth={'md'}
       onSubmit={handleLiftRequest}
-      title={'Lift Request Form'}
-      confirmText={'Request'}
-      cancelText={'Close'}
+      title={'리프트 요청 폼'}
+      confirmText={'요청'}
+      cancelText={'닫기'}
     >
       <div className={classes.divForm}>
         <Autocomplete
@@ -139,8 +139,8 @@ export const LiftRequestDialog = ({
           renderInput={(params) => (
             <TextField
               {...params}
-              label="Pick a Destination"
-              placeholder="Pick a Destination"
+              label="목적지 선택"
+              placeholder="목적지 선택"
               variant="outlined"
               error={!!destinationError}
               helperText={destinationError}
@@ -158,7 +158,7 @@ export const LiftRequestDialog = ({
           renderInput={(params) => (
             <TextField
               {...params}
-              label="Pick a Door State"
+              label="문 상태를 선택하세요"
               placeholder="Pick a Door State"
               variant="outlined"
               error={!!doorStateError}
@@ -177,8 +177,8 @@ export const LiftRequestDialog = ({
           renderInput={(params) => (
             <TextField
               {...params}
-              label="Pick Request Type"
-              placeholder="Pick Request Type"
+              label="요청 유형을 선택하세요"
+              placeholder="요청 유형을 선택하세요"
               variant="outlined"
               error={!!requestTypeError}
               helperText={requestTypeError}

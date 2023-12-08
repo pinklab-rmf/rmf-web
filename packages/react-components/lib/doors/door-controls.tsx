@@ -15,10 +15,10 @@ export function DoorControls({
   return (
     <ButtonGroup variant="contained" size="small" sx={{ alignSelf: 'center' }}>
       <Button onClick={onOpenClick} aria-label={`open-${doorName}`}>
-        Open
+        열기
       </Button>
       <Button onClick={onCloseClick} aria-label={`close-${doorName}`}>
-        Close
+        닫기
       </Button>
     </ButtonGroup>
   );

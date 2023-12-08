@@ -197,7 +197,7 @@ export function WorkcellPanel({
         <Grid container direction="row" justifyContent="space-between" alignItems="center">
           <Grid item xs={6}>
             <Typography variant="h5" className={classes.panelHeader}>
-              Workcells
+              작업 구역
             </Typography>
           </Grid>
           <Grid item>
@@ -214,7 +214,7 @@ export function WorkcellPanel({
       {isCellView ? (
         <React.Fragment>
           <div className={classes.cellContainer}>
-            <Typography variant="h6">Dispensers</Typography>
+            <Typography variant="h6">디스펜서</Typography>
             <Grid container direction="row" spacing={1}>
               <AutoSizer disableHeight>
                 {({ width }) => {
@@ -273,7 +273,7 @@ export function WorkcellPanel({
         <React.Fragment>
           {dispensers.length > 0 ? (
             <div className={classes.tableDiv}>
-              <Typography variant="h6">Dispenser Table</Typography>
+              <Typography variant="h6">디스펜서 Table</Typography>
               <WorkcellTable workcells={dispensers} workcellStates={workcellStates} />
             </div>
           ) : null}

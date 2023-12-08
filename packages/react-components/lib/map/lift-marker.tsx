@@ -141,10 +141,10 @@ export const LiftMarker = React.forwardRef(function (
         transform={`translate(${cx} ${cy}) scale(${textScale})`}
       >
         <tspan x="0" dy="-0.5em">
-          Unknown
+          알수없음
         </tspan>
         <tspan x="0" dy="1em">
-          State
+          상태
         </tspan>
       </text>
     );

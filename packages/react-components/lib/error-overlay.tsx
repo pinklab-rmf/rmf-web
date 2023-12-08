@@ -61,7 +61,7 @@ export const ErrorOverlay = React.memo((props: ErrorOverlayProps): JSX.Element =
             </Grid>
             <Grid item>
               <Typography color="error" variant="h4" align="center">
-                Error
+                에러
               </Typography>
             </Grid>
           </Grid>

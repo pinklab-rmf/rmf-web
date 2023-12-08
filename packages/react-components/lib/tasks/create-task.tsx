@@ -161,7 +161,7 @@ function FormToolbar({ onSelectFileClick }: FormToolbarProps) {
       color="primary"
       onClick={onSelectFileClick}
     >
-      Select File
+      파일 선택
     </Button>
   );
 }

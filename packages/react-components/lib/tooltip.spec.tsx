@@ -7,7 +7,7 @@ describe('Tooltip', () => {
   it('renders the tooltip', () => {
     render(
       <Tooltip title="test" id="test" enabled={true}>
-        <Typography variant="h5">Tooltip is enabled</Typography>
+        <Typography variant="h5">툴팁이 활성화되었습니다</Typography>
       </Tooltip>,
     );
 
@@ -19,7 +19,7 @@ describe('Tooltip', () => {
   it('does not render the tooltip when disabled', () => {
     render(
       <Tooltip title="test" id="test" enabled={false}>
-        <Typography variant="h5">Tooltip is disabled</Typography>
+        <Typography variant="h5">툴팁이 비활성화되었습니다</Typography>
       </Tooltip>,
     );
 

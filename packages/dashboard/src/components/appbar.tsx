@@ -417,7 +417,7 @@ export const AppBar = React.memo(({ extraToolbarItems }: AppBarProps): React.Rea
             {unacknowledgedAlertList.length === 0 ? (
               <MenuItem dense disabled>
                 <Typography variant="body2" noWrap>
-                  No unacknowledged alerts
+                  미확인 알림 없음
                 </Typography>
               </MenuItem>
             ) : (
@@ -426,11 +426,11 @@ export const AppBar = React.memo(({ extraToolbarItems }: AppBarProps): React.Rea
                   key={alert.id}
                   title={
                     <React.Fragment>
-                      <Typography>Alert</Typography>
+                      <Typography>알림</Typography>
                       <Typography>ID: {alert.original_id}</Typography>
-                      <Typography>Type: {alert.category.toUpperCase()}</Typography>
+                      <Typography>타입: {alert.category.toUpperCase()}</Typography>
                       <Typography>
-                        Created: {new Date(alert.unix_millis_created_time).toLocaleString()}
+                        생성: {new Date(alert.unix_millis_created_time).toLocaleString()}
                       </Typography>
                     </React.Fragment>
                   }
@@ -446,7 +446,7 @@ export const AppBar = React.memo(({ extraToolbarItems }: AppBarProps): React.Rea
                   >
                     <Report />
                     <Typography variant="body2" mx={1} noWrap>
-                      Task {alert.original_id} had an alert{' '}
+                      작업 {alert.original_id} 에서 알림이 왔습니다{' '}
                       {timeDistance(alert.unix_millis_created_time)} ago
                     </Typography>
                   </MenuItem>

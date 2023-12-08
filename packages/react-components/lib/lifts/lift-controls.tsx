@@ -33,7 +33,7 @@ export function LiftControls({
           setShowDialog(true);
         }}
       >
-        Request
+        요청
       </Button>
       <LiftRequestDialog
         key={resetForm}

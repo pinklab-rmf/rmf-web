@@ -75,7 +75,7 @@ export const TaskLogs: React.FC<TaskLogsProps> = ({ taskLog, eventName, eventSta
         Object.entries(taskLog.phases).map(([phaseId, phase]) => (
           <Paper sx={{ padding: theme.spacing(1) }} variant="outlined" key={phaseId}>
             <Typography variant="h6" fontWeight="bold" marginTop={3}>
-              Phase - {phaseId}
+              단계 - {phaseId}
             </Typography>
 
             <Divider />
@@ -135,7 +135,7 @@ export const TaskLogs: React.FC<TaskLogsProps> = ({ taskLog, eventName, eventSta
                         sx={{ padding: theme.spacing(1) }}
                         fontWeight="bold"
                       >
-                        No Logs
+                        로그 없음
                       </Typography>
                     )}
                   </div>
@@ -143,7 +143,7 @@ export const TaskLogs: React.FC<TaskLogsProps> = ({ taskLog, eventName, eventSta
               })
             ) : (
               <Typography align="center" sx={{ padding: theme.spacing(1) }} fontWeight="bold">
-                No Event Logs
+                이벤트 로그 없음
               </Typography>
             )}
           </Paper>
@@ -151,7 +151,7 @@ export const TaskLogs: React.FC<TaskLogsProps> = ({ taskLog, eventName, eventSta
       ) : (
         <div>
           <Typography align="center" sx={{ padding: theme.spacing(1) }} fontWeight="bold">
-            No logs to be shown
+            표시할 로그가 없습니다
           </Typography>
         </div>
       )}

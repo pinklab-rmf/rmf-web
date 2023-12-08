@@ -86,7 +86,7 @@ const ThemeDisplay = (): JSX.Element => {
   return (
     <ThemeDisplayRoot>
       <Typography variant="h5" className={classes.header}>
-        Theme Colors
+        색상 테마
       </Typography>
       <div style={{ display: 'flex' }}>
         <ColorCard color={classes.main} colorName={'Main'} />

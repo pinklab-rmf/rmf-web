@@ -11,7 +11,7 @@ export default {
 export const SimpleTooltip: Story = (args) => {
   return (
     <Tooltip title="This is a tooltip" id="test" enabled={true} {...args}>
-      <Typography variant="h5">Hover over me</Typography>
+      <Typography variant="h5">여기 위에 마우스를 올려주세요</Typography>
     </Tooltip>
   );
 };

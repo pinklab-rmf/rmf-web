@@ -22,7 +22,7 @@ export const LoadingButton: Story<LoadingProps> = (args) => {
         </Loading>
       </Button>
       <Typography style={{ marginTop: 8 }}>
-        Use the storybook controls to change loading state
+        스토리북 컨트롤을 사용하여 로딩 상태를 변경하세요
       </Typography>
     </>
   );

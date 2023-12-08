@@ -82,7 +82,7 @@ export interface TableDataGridState {
 
 const TaskRequester = (requester: string | null): JSX.Element => {
   if (!requester) {
-    return <Typography variant="body1">unknown</Typography>;
+    return <Typography variant="body1">알수없음</Typography>;
   }
 
   /** When a task is created as scheduled,
@@ -140,7 +140,7 @@ export function TaskDataGridTable({
   const columns: GridColDef[] = [
     {
       field: 'unix_millis_request_time',
-      headerName: 'Date',
+      headerName: '날짜',
       width: 150,
       editable: false,
       renderCell: (cellValues) => {
@@ -165,7 +165,7 @@ export function TaskDataGridTable({
     },
     {
       field: 'requester',
-      headerName: 'Requester',
+      headerName: '요청자',
       minWidth: 160,
       editable: false,
       renderCell: (cellValues) => TaskRequester(cellValues.row.booking.requester),
@@ -175,7 +175,7 @@ export function TaskDataGridTable({
     },
     {
       field: 'id_',
-      headerName: 'ID',
+      headerName: '식별자',
       width: 90,
       valueGetter: (params: GridValueGetterParams) => params.row.booking.id,
       flex: 1,
@@ -184,7 +184,7 @@ export function TaskDataGridTable({
     },
     {
       field: 'category',
-      headerName: 'Category',
+      headerName: '분류',
       width: 150,
       editable: false,
       valueGetter: (params: GridValueGetterParams) =>
@@ -195,7 +195,7 @@ export function TaskDataGridTable({
     },
     {
       field: 'assigned_to',
-      headerName: 'Assignee',
+      headerName: '담당자',
       width: 150,
       editable: false,
       valueGetter: (params: GridValueGetterParams) =>
@@ -206,7 +206,7 @@ export function TaskDataGridTable({
     },
     {
       field: 'unix_millis_start_time',
-      headerName: 'Start Time',
+      headerName: '시작 시간',
       width: 150,
       editable: false,
       renderCell: (cellValues) => {
@@ -233,7 +233,7 @@ export function TaskDataGridTable({
     },
     {
       field: 'unix_millis_finish_time',
-      headerName: 'End Time',
+      headerName: '종료 시간',
       width: 150,
       editable: false,
       renderCell: (cellValues) => {
@@ -260,7 +260,7 @@ export function TaskDataGridTable({
     },
     {
       field: 'status',
-      headerName: 'State',
+      headerName: '상태',
       editable: false,
       valueGetter: (params: GridValueGetterParams) =>
         params.row.status ? params.row.status : 'unknown',

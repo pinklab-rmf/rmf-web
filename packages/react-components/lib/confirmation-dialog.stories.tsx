@@ -18,12 +18,12 @@ export const Default: Story<ConfirmationDialogProps> = (args) => {
       open={true}
       toolbar={
         <Button variant="contained" color="primary">
-          Action
+          행동
         </Button>
       }
     >
       <Paper variant="outlined" style={{ padding: 200 }}>
-        <Typography>Content</Typography>
+        <Typography>내용</Typography>
       </Paper>
     </ConfirmationDialog>
   );

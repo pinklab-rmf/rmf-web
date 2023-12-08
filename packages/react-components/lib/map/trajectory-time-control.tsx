@@ -61,7 +61,7 @@ function Component({ value, min, max, onChange }: TrajectoryTimeControlProps) {
       aria-haspopup={true}
     >
       <div className={classes.container} style={{ display: open ? 'block' : 'none' }}>
-        <Typography id="trajectory-time">Trajectory Time (min)</Typography>
+        <Typography id="trajectory-time">이동 경로 소요 시간 (분)</Typography>
         <Grid container spacing={2} alignItems="center">
           <Grid item>
             <Slider

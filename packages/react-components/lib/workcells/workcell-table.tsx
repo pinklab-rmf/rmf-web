@@ -203,35 +203,35 @@ export const WorkcellTable = ({ workcells, workcellStates }: WorkcellTableProps)
                   variant="head"
                   className={clsx(classes.tableCell, fixedTableCell)}
                 >
-                  Dispenser Name
+                  디스펜서 이름
                 </ItemTableCell>
                 <ItemTableCell
                   component="div"
                   variant="head"
                   className={clsx(classes.tableCell, fixedTableCell)}
                 >
-                  Op. Mode
+                  운영 모드
                 </ItemTableCell>
                 <ItemTableCell
                   component="div"
                   variant="head"
                   className={clsx(classes.tableCell, fixedTableCell)}
                 >
-                  No. Queued Requests
+                  대기 중인 요청 수
                 </ItemTableCell>
                 <ItemTableCell
                   component="div"
                   variant="head"
                   className={clsx(classes.tableCell, fixedTableCell)}
                 >
-                  Request Queue ID
+                  요청 대기열 ID
                 </ItemTableCell>
                 <ItemTableCell
                   component="div"
                   variant="head"
                   className={clsx(classes.tableCell, fixedTableCell)}
                 >
-                  Seconds Remaining
+                  남은 시간(초)
                 </ItemTableCell>
               </TableRow>
             </TableHead>
