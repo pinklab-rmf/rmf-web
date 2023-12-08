@@ -27,10 +27,10 @@ describe('Header Bar', () => {
         </Toolbar>
       </HeaderBar>,
     );
-    expect(screen.getByText('Building')).toBeTruthy();
-    expect(screen.getByText('Robots')).toBeTruthy();
+    expect(screen.getByText('빌딩')).toBeTruthy();
+    expect(screen.getByText('로봇')).toBeTruthy();
     expect(screen.getByText('Powered by Open-RMF')).toBeTruthy();
-    expect(screen.getByLabelText('user-btn')).toBeTruthy();
+    expect(screen.getByLabelText('사용자-버튼')).toBeTruthy();
     cleanup();
   });
 });

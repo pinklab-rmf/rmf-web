@@ -38,7 +38,7 @@ describe('TaskLogs', () => {
         eventStatus={() => 'completed'}
       />,
     );
-    expect(() => root.getByText('No Logs')).not.toThrow();
+    expect(() => root.getByText('로그 없음')).not.toThrow();
   });
 
   it('placeholder is shown when there are no events', () => {
@@ -56,7 +56,7 @@ describe('TaskLogs', () => {
         eventStatus={() => 'completed'}
       />,
     );
-    expect(() => root.getByText('No Event Logs')).not.toThrow();
+    expect(() => root.getByText('"이벤트 로그 없음')).not.toThrow();
   });
 
   it('placeholder is shown where there are no phases', () => {
@@ -69,6 +69,6 @@ describe('TaskLogs', () => {
         eventStatus={() => 'completed'}
       />,
     );
-    expect(() => root.getByText('No logs to be shown')).not.toThrow();
+    expect(() => root.getByText('표시할 로그가 없습니다')).not.toThrow();
   });
 });

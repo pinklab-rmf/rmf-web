@@ -75,17 +75,17 @@ describe('AcknowledgeAndCloseAlertDialog', () => {
         />
       </ThemeProvider>,
     );
-    expect(() => root.getByText('Acknowledge')).not.toThrow();
-    expect(() => root.getByText('Dismiss')).not.toThrow();
-    fireEvent.click(root.getByText('Acknowledge'));
+    expect(() => root.getByText('승인')).not.toThrow();
+    expect(() => root.getByText('거부')).not.toThrow();
+    fireEvent.click(root.getByText('승인'));
     expect(acknowledge).toHaveBeenCalled();
     // acknowledge button turns to acknowledged
-    expect(() => root.getByText('Acknowledge')).toThrow();
-    expect(() => root.getByText('Acknowledged')).not.toThrow();
+    expect(() => root.getByText('승인')).toThrow();
+    expect(() => root.getByText('승인되었습니다')).not.toThrow();
     // dismiss button turns to close
-    expect(() => root.getByText('Dismiss')).toThrow();
-    expect(() => root.getByText('Close')).not.toThrow();
-    fireEvent.click(root.getByText('Close'));
+    expect(() => root.getByText('거부')).toThrow();
+    expect(() => root.getByText('닫기')).not.toThrow();
+    fireEvent.click(root.getByText('닫기'));
     expect(close).toHaveBeenCalled();
   });
 });
