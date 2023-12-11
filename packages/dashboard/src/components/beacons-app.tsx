@@ -4,7 +4,7 @@ import { BeaconDataGridTable } from 'react-components';
 import { createMicroApp } from './micro-app';
 import { RmfAppContext } from './rmf-app';
 
-export const BeaconsApp = createMicroApp('Beacons', () => {
+export const BeaconsApp = createMicroApp('비콘', () => {
   const rmf = React.useContext(RmfAppContext);
   const [beacons, setBeacons] = React.useState<Record<string, BeaconState>>({});
 

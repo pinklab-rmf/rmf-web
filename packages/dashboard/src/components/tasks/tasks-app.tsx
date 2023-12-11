@@ -285,7 +285,7 @@ export const TasksApp = React.memo(
                     }}
                     disableRipple
                   >
-                    최소 정보로 내보내기
+                    최소 정보 내보내기
                   </MenuItem>
                   <MenuItem
                     onClick={() => {

@@ -177,9 +177,9 @@ export const TaskSummary = React.memo((props: TaskSummaryProps) => {
       fullWidth
       maxWidth="sm"
     >
-      <DialogTitle align="center">Task Summary</DialogTitle>
+      <DialogTitle align="center">작업 요약</DialogTitle>
       <Divider />
-      <DialogTitle align="center">Task State</DialogTitle>
+      <DialogTitle align="center">작업 상태</DialogTitle>
       {taskProgress && (
         <Box component="div" sx={{ width: '90%', ml: 3 }}>
           <LinearProgressWithLabel value={taskProgress * 100} />
@@ -193,7 +193,7 @@ export const TaskSummary = React.memo((props: TaskSummaryProps) => {
           onClick={() => setOpenTaskDetailsLogs(true)}
           autoFocus
         >
-          Inspect
+          작업 확인
         </Button>
       </DialogActions>
       {openTaskDetailsLogs && (

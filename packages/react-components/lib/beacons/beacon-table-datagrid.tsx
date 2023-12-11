@@ -69,7 +69,7 @@ export function BeaconDataGridTable({ beacons }: BeaconDataGridTableProps): JSX.
   const columns: GridColDef[] = [
     {
       field: 'beaconName',
-      headerName: 'Name',
+      headerName: '이름',
       width: 90,
       valueGetter: (params: GridValueGetterParams) => params.row.id,
       flex: 1,
@@ -77,7 +77,7 @@ export function BeaconDataGridTable({ beacons }: BeaconDataGridTableProps): JSX.
     },
     {
       field: 'opMode',
-      headerName: 'Op. Mode',
+      headerName: '운영 모드',
       width: 150,
       editable: false,
       flex: 1,
@@ -86,7 +86,7 @@ export function BeaconDataGridTable({ beacons }: BeaconDataGridTableProps): JSX.
     },
     {
       field: 'levelName',
-      headerName: 'Level',
+      headerName: '층',
       width: 150,
       editable: false,
       valueGetter: (params: GridValueGetterParams) => params.row.level ?? 'N/A',
@@ -95,7 +95,7 @@ export function BeaconDataGridTable({ beacons }: BeaconDataGridTableProps): JSX.
     },
     {
       field: 'beaconCategory',
-      headerName: 'Type',
+      headerName: '종류',
       width: 150,
       editable: false,
       valueGetter: (params: GridValueGetterParams) => params.row.category ?? 'N/A',
@@ -104,7 +104,7 @@ export function BeaconDataGridTable({ beacons }: BeaconDataGridTableProps): JSX.
     },
     {
       field: 'beaconState',
-      headerName: 'Beacon State',
+      headerName: '비콘 상태',
       width: 150,
       editable: false,
       flex: 1,
@@ -124,7 +124,7 @@ export function BeaconDataGridTable({ beacons }: BeaconDataGridTableProps): JSX.
         columns={columns}
         rowsPerPageOptions={[5]}
         localeText={{
-          noRowsLabel: 'No beacons available.',
+          noRowsLabel: '사용 가능한 비콘이 없습니다',
         }}
       />
     </div>

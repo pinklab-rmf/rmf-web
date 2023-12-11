@@ -130,10 +130,10 @@ export const TaskSchedule = () => {
   const CustomCalendarEditor = ({ scheduler, value, onChange }: CustomCalendarEditorProps) => {
     return (
       <ConfirmationDialog
-        confirmText={'Ok'}
-        cancelText="Cancel"
+        confirmText={'확인'}
+        cancelText="취소"
         open={true}
-        title={'Edit recurring task'}
+        title={'반복 작업 편집'}
         submitting={undefined}
         onClose={() => {
           scheduler.close();

@@ -52,14 +52,14 @@ export function AddPermissionDialog({
       setOpen && setOpen(false);
     } catch (e) {
       setSaving(false);
-      showAlert('error', `Failed to save permission: ${(e as Error).message}`);
+      showAlert('error', `권한 저장 실패: ${(e as Error).message}`);
     }
   };
 
   return (
     <ConfirmationDialog
       open={open}
-      title="Add Permission"
+      title="권한 추가"
       confirmText="Save"
       submitting={saving}
       onSubmit={handleSubmit}
@@ -72,11 +72,11 @@ export function AddPermissionDialog({
         fullWidth
         autoFocus
         margin="normal"
-        label="Action"
+        label="동작"
         value={action}
         onChange={(ev) => setAction(ev.target.value)}
         error={actionError}
-        helperText="Required"
+        helperText="필수 사항"
       >
         {Object.values(RmfAction).map((act) => (
           <MenuItem key={act} value={act}>
@@ -88,11 +88,11 @@ export function AddPermissionDialog({
         id="authz-grp-input"
         variant="outlined"
         fullWidth
-        label="Authorization Group"
+        label="인가 그룹"
         value={authzGrp}
         onChange={(ev) => setAuthzGrp(ev.target.value)}
         error={authzGrpError}
-        helperText="Required"
+        helperText="필수 사항"
       />
     </ConfirmationDialog>
   );

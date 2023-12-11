@@ -32,7 +32,7 @@ export const TaskLogsApp = createMicroApp('작업 로그', () => {
           ).data;
           setTaskLogs(logs);
         } catch {
-          console.log(`Failed to fetch task logs for ${task.booking.id}`);
+          console.log(`${task.booking.id} 작업 로그를 가져오지 못했습니다 `);
           setTaskLogs(null);
         }
         setTaskState(task);

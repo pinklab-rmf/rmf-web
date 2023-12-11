@@ -79,7 +79,7 @@ export function UserListCard({
         setHasMore(results.length > ItemsPerPage);
         setUsers(results.slice(0, ItemsPerPage));
       } catch (e) {
-        showAlert('error', `Failed to get users: ${(e as Error).message}`);
+        showAlert('error', `사용자를 불러오는데 실패했습니다: ${(e as Error).message}`);
       } finally {
         setSearching(false);
       }
@@ -93,7 +93,7 @@ export function UserListCard({
   return (
     <StyledCard variant="outlined">
       <CardHeader
-        title="Users"
+        title="사용자"
         titleTypographyProps={{ variant: 'h5' }}
         avatar={<AccountIcon fontSize="large" />}
         action={
@@ -101,7 +101,7 @@ export function UserListCard({
             <TextField
               variant="outlined"
               id="search-users"
-              label="Search Users"
+              label="사용자 검색"
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
@@ -148,7 +148,7 @@ export function UserListCard({
                         setOpenDeleteDialog(true);
                       }}
                     >
-                      Delete
+                      삭제
                     </Button>
                   </TableCell>
                 </TableRow>
@@ -169,7 +169,7 @@ export function UserListCard({
       {openDeleteDialog && (
         <ConfirmationDialog
           open={openDeleteDialog}
-          title="Confirm Delete"
+          title="삭제 확인"
           submitting={deleting}
           onClose={() => setOpenDeleteDialog(false)}
           onSubmit={async () => {
@@ -181,11 +181,11 @@ export function UserListCard({
               refresh();
             } catch (e) {
               setDeleting(false);
-              showAlert('error', `Failed to delete user: ${(e as Error).message}`);
+              showAlert('error', `사용자를 삭제하는데 실패했습니다: ${(e as Error).message}`);
             }
           }}
         >
-          <Typography>{`Are you sure you want to delete "${selectedUser}"?`}</Typography>
+          <Typography>{`"${selectedUser}" 사용자를 정말로 삭제하기 원하십니까??`}</Typography>
         </ConfirmationDialog>
       )}
       {openCreateDialog && (

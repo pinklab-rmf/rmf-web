@@ -42,14 +42,14 @@ export function CreateUserDialog({
       setOpen && setOpen(false);
     } catch (e) {
       setCreating(false);
-      showAlert('error', `Failed to create user: ${(e as Error).message}`);
+      showAlert('error', `사용자를 만드는데 실패했습니다: ${(e as Error).message}`);
     }
   };
 
   return (
     <ConfirmationDialog
       open={open}
-      title="Create User"
+      title="사용자 생성"
       confirmText="Create"
       submitting={creating}
       onSubmit={submitForm}
@@ -61,11 +61,11 @@ export function CreateUserDialog({
         fullWidth
         autoFocus
         margin="normal"
-        label="Username"
+        label="사용자 이름"
         value={username}
         onChange={(ev) => setUsername(ev.target.value)}
         error={usernameError}
-        helperText="Required"
+        helperText="필수"
       />
     </ConfirmationDialog>
   );

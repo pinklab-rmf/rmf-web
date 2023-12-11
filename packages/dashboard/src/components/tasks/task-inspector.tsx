@@ -50,7 +50,7 @@ export function TaskInspector({ task, onClose }: TableDataGridState): JSX.Elemen
           ).data;
           setTaskLogs(logs);
         } catch {
-          console.log(`Failed to fetch task logs for ${subscribedTask.booking.id}`);
+          console.log(`${subscribedTask.booking.id} 작업 로그를 가져오지 못했습니다 `);
           setTaskLogs(null);
         }
         setTaskState(subscribedTask);
@@ -80,10 +80,10 @@ export function TaskInspector({ task, onClose }: TableDataGridState): JSX.Elemen
         type: 'cancel_task_request',
         task_id: taskState.booking.id,
       });
-      appController.showAlert('success', 'Successfully cancelled task');
+      appController.showAlert('success', '작업을 성공적으로 취소했습니다');
       AppEvents.taskSelect.next(null);
     } catch (e) {
-      appController.showAlert('error', `Failed to cancel task: ${(e as Error).message}`);
+      appController.showAlert('error', `작업을 취소하는 데 실패했습니다: ${(e as Error).message}`);
     }
   }, [appController, taskState, rmf]);
 
@@ -104,7 +104,7 @@ export function TaskInspector({ task, onClose }: TableDataGridState): JSX.Elemen
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <DialogTitle id="scroll-dialog-title" align="center">
-                Task: {task?.booking.id}
+                작업: {task?.booking.id}
               </DialogTitle>
             </Grid>
           </Grid>
@@ -130,7 +130,7 @@ export function TaskInspector({ task, onClose }: TableDataGridState): JSX.Elemen
                           disabled={!taskCancellable}
                           onClick={handleCancelTaskClick}
                         >
-                          Cancel Task
+                          작업 취소
                         </Button>
                       </Grid>
                     </>
@@ -138,7 +138,7 @@ export function TaskInspector({ task, onClose }: TableDataGridState): JSX.Elemen
                     <Grid container wrap="nowrap" alignItems="center" style={{ height: '100%' }}>
                       <CardContent>
                         <Typography variant="h6" align="center">
-                          Click on a task to view more information
+                          자세한 정보를 보려면 작업을 클릭하세요
                         </Typography>
                       </CardContent>
                     </Grid>

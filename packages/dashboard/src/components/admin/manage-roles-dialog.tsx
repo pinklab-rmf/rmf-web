@@ -73,7 +73,7 @@ export function ManageRolesDialog({
         setAvailableRoles(allRoles.filter((r) => defaultAssignedRoles.indexOf(r) === -1).sort());
         setAssignedRoles(defaultAssignedRoles.sort());
       } catch (e) {
-        showAlert('error', `Failed to get roles: ${(e as Error).message}`);
+        showAlert('error', `역할을 가져오는데 실패했습니다: ${(e as Error).message}`);
       } finally {
         setLoading(false);
       }
@@ -89,7 +89,7 @@ export function ManageRolesDialog({
         setOpen && setOpen(false);
       } catch (e) {
         setSaving(false);
-        showAlert('error', `Failed to save roles: ${(e as Error).message}`);
+        showAlert('error', `역할을 저장하는데 실패했습니다: ${(e as Error).message}`);
       }
     })();
   };
@@ -102,14 +102,14 @@ export function ManageRolesDialog({
       onClose={() => setOpen && setOpen(false)}
       {...dialogProps}
     >
-      <DialogTitle>Manage Roles</DialogTitle>
+      <DialogTitle>역할 관리</DialogTitle>
       <DialogContent dividers className={classes.dialogContent}>
         <Loading loading={loading} size="5em">
           <TransferList
             leftItems={availableRoles}
             rightItems={assignedRoles}
-            leftTitle="Available Roles"
-            rightTitle="Assigned Roles"
+            leftTitle="사용 가능한 역할"
+            rightTitle="할당된 역할"
             onTransfer={(left, right) => {
               setAvailableRoles(left.sort());
               setAssignedRoles(right.sort());
@@ -129,7 +129,7 @@ export function ManageRolesDialog({
           }}
           disabled={saving}
         >
-          Cancel
+          취소
         </Button>
         <Button
           variant="contained"
@@ -140,7 +140,7 @@ export function ManageRolesDialog({
           onClick={handleOkClick}
         >
           <Loading hideChildren loading={saving} size="1.5em" color="inherit">
-            Save
+            저장
           </Loading>
         </Button>
       </DialogActions>
@@ -165,7 +165,7 @@ export function ManageRolesCard({
   return (
     <StyledCard variant="outlined" {...otherProps}>
       <CardHeader
-        title="Roles"
+        title="역할"
         titleTypographyProps={{ variant: 'h5' }}
         avatar={<SecurityIcon />}
         action={
@@ -177,7 +177,7 @@ export function ManageRolesCard({
               setOpenDialog(true);
             }}
           >
-            Add/Remove
+            추가/삭제
           </Button>
         }
         classes={{ action: classes.action }}

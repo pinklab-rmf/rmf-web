@@ -65,7 +65,7 @@ function RoleAccordion({
               className={classes.deleteRoleButton}
               onClick={onDeleteClick}
             >
-              Delete Role
+              역할 삭제
             </Button>
           </Grid>
           <Grid item>
@@ -113,7 +113,7 @@ export function RoleListCard({
       const newRoles = await safeAsync(getRoles());
       setRoles(newRoles.sort());
     } catch (e) {
-      showAlert('error', `Failed to get roles: ${(e as Error).message}`);
+      showAlert('error', `역할을 가져오는데 실패했습니다: ${(e as Error).message}`);
     } finally {
       setLoading(false);
     }
@@ -150,11 +150,11 @@ export function RoleListCard({
   return (
     <StyledCard variant="outlined">
       <CardHeader
-        title="Roles"
+        title="역할"
         titleTypographyProps={{ variant: 'h5' }}
         avatar={<SecurityIcon />}
         action={
-          <IconButton onClick={() => setOpenDialog(true)} aria-label="create role">
+          <IconButton onClick={() => setOpenDialog(true)} aria-label="역할 생성">
             <AddIcon fontSize="large" />
           </IconButton>
         }
@@ -189,7 +189,7 @@ export function RoleListCard({
       {selectedDeleteRole && (
         <ConfirmationDialog
           open={!!selectedDeleteRole}
-          title="Confirm Delete"
+          title="삭제 확인"
           submitting={!!deleting}
           onClose={() => setSelectedDeleteRole(null)}
           onSubmit={async () => {
@@ -198,13 +198,13 @@ export function RoleListCard({
               deleteRole && (await safeAsync(deleteRole(selectedDeleteRole)));
               refresh();
             } catch (e) {
-              showAlert('error', `Failed to delete user: ${(e as Error).message}`);
+              showAlert('error', `사용자를 삭제하는데 실패했습니다: ${(e as Error).message}`);
             } finally {
               setSelectedDeleteRole(null);
             }
           }}
         >
-          <Typography>{`Are you sure you want to delete "${selectedDeleteRole}"?`}</Typography>
+          <Typography>{`"${selectedDeleteRole}"역할을 정말로 삭제하시겠습니까?`}</Typography>
         </ConfirmationDialog>
       )}
     </StyledCard>

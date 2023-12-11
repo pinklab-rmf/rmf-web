@@ -132,7 +132,7 @@ export function TaskLogs({ taskLog, taskState, title }: TaskLogProps) {
                 })
               ) : (
                 <Typography align="center" sx={{ padding: theme.spacing(1) }} fontWeight="bold">
-                  No Event Logs
+                  이벤트 로그 없음
                 </Typography>
               )}
             </Paper>
@@ -141,7 +141,7 @@ export function TaskLogs({ taskLog, taskState, title }: TaskLogProps) {
       ) : (
         <div>
           <Typography align="center" sx={{ padding: theme.spacing(1) }} fontWeight="bold">
-            No Logs to be shown
+            표시할 로그가 없습니다
           </Typography>
         </div>
       )}

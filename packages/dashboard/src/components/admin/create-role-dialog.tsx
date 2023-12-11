@@ -42,15 +42,15 @@ export function CreateRoleDialog({
       setOpen && setOpen(false);
     } catch (e) {
       setCreating(false);
-      showAlert('error', `Failed to create role: ${(e as Error).message}`);
+      showAlert('error', `역할 생성 실패: ${(e as Error).message}`);
     }
   };
 
   return (
     <ConfirmationDialog
       open={open}
-      title="Create Role"
-      confirmText="Create"
+      title="역할 생성"
+      confirmText="생성"
       submitting={creating}
       onSubmit={submitForm}
       onClose={() => setOpen && setOpen(false)}
@@ -60,12 +60,12 @@ export function CreateRoleDialog({
         variant="outlined"
         fullWidth
         autoFocus
-        label="Role"
+        label="역할 이름"
         margin="normal"
         value={role}
         onChange={(ev) => setRole(ev.target.value)}
         error={roleError}
-        helperText="Required"
+        helperText="필수"
       />
     </ConfirmationDialog>
   );

@@ -155,7 +155,7 @@ interface FormToolbarProps {
 function FormToolbar({ onSelectFileClick }: FormToolbarProps) {
   return (
     <Button
-      aria-label="Select File"
+      aria-label="파일 선택"
       className={classes.selectFileBtn}
       variant="contained"
       color="primary"
@@ -220,16 +220,14 @@ function DeliveryTaskForm({
               },
             })
           }
-          renderInput={(params) => (
-            <TextField {...params} label="Pickup Location" required={true} />
-          )}
+          renderInput={(params) => <TextField {...params} label="수령 위치" required={true} />}
         />
       </Grid>
       <Grid item xs={4}>
         <TextField
           id="pickup_sku"
           fullWidth
-          label="Pickup SKU"
+          label="수령 SKU(고유 식별 번호)"
           value={taskDesc.pickup.payload.sku}
           required
           onChange={(ev) => {
@@ -249,7 +247,7 @@ function DeliveryTaskForm({
       <Grid item xs={2}>
         <PositiveIntField
           id="pickup_quantity"
-          label="Quantity"
+          label="수량"
           value={taskDesc.pickup.payload.quantity}
           onChange={(_ev, val) => {
             onInputChange({
@@ -296,16 +294,14 @@ function DeliveryTaskForm({
               },
             })
           }
-          renderInput={(params) => (
-            <TextField {...params} label="Dropoff Location" required={true} />
-          )}
+          renderInput={(params) => <TextField {...params} label="하차 위치" required={true} />}
         />
       </Grid>
       <Grid item xs={4}>
         <TextField
           id="dropoff_sku"
           fullWidth
-          label="Dropoff SKU"
+          label="하차 SKU(고유 식별 번호)"
           value={taskDesc.dropoff.payload.sku}
           required
           onChange={(ev) => {
@@ -325,7 +321,7 @@ function DeliveryTaskForm({
       <Grid item xs={2}>
         <PositiveIntField
           id="dropoff_quantity"
-          label="Quantity"
+          label="수량"
           value={taskDesc.dropoff.payload.quantity}
           onChange={(_ev, val) => {
             onInputChange({
@@ -373,7 +369,7 @@ function PlaceList({ places, onClick }: PlaceListProps) {
           <ListItemIcon>
             <PlaceOutlined />
           </ListItemIcon>
-          <ListItemText primary={`Place Name:   ${value}`} />
+          <ListItemText primary={`장소 이름:   ${value}`} />
         </ListItem>
       ))}
     </List>
@@ -409,13 +405,13 @@ function PatrolTaskForm({ taskDesc, patrolWaypoints, onChange, allowSubmit }: Pa
               places: taskDesc.places.concat(newValue).filter((el: string) => el),
             })
           }
-          renderInput={(params) => <TextField {...params} label="Place Name" required={true} />}
+          renderInput={(params) => <TextField {...params} label="장소 이름" required={true} />}
         />
       </Grid>
       <Grid item xs={2}>
         <PositiveIntField
           id="loops"
-          label="Loops"
+          label="반복 횟수"
           value={taskDesc.rounds}
           onChange={(_ev, val) => {
             onInputChange({
@@ -468,7 +464,7 @@ function CleanTaskForm({ taskDesc, cleaningZones, onChange, allowSubmit }: Clean
         });
       }}
       onBlur={(ev) => onInputChange({ ...taskDesc, zone: (ev.target as HTMLInputElement).value })}
-      renderInput={(params) => <TextField {...params} label="Cleaning Zone" required={true} />}
+      renderInput={(params) => <TextField {...params} label="청소 영역" required={true} />}
     />
   );
 }
@@ -632,18 +628,18 @@ const DaySelectorSwitch: React.VFC<DaySelectorSwitchProps> = ({ disabled, onChan
   return (
     <div>
       <TextField
-        label="Recurring Every"
+        label="주기"
         color="primary"
         InputProps={{
           disabled: true,
           startAdornment: [
-            renderChip(0, 'Mon'),
-            renderChip(1, 'Tue'),
-            renderChip(2, 'Wed'),
-            renderChip(3, 'Thu'),
-            renderChip(4, 'Fri'),
-            renderChip(5, 'Sat'),
-            renderChip(6, 'Sun'),
+            renderChip(0, '월'),
+            renderChip(1, '화'),
+            renderChip(2, '수'),
+            renderChip(3, '목'),
+            renderChip(4, '금'),
+            renderChip(5, '토'),
+            renderChip(6, '일'),
           ],
         }}
       />
@@ -944,12 +940,12 @@ export function CreateTaskForm({
     })();
   };
 
-  const submitText = taskRequests.length > 1 ? 'Submit All Now' : 'Submit Now';
+  const submitText = taskRequests.length > 1 ? 'Submit All Now' : '지금 시작';
 
   return (
     <>
       <StyledDialog
-        title="Create Task"
+        title="작업 생성"
         maxWidth="lg"
         fullWidth={taskRequests.length > 1}
         disableEnforceFocus
@@ -959,7 +955,7 @@ export function CreateTaskForm({
           <DialogTitle>
             <Grid container wrap="nowrap">
               <Grid item className={classes.title}>
-                Create Task
+                작업 생성
               </Grid>
               <Grid item>
                 <FormToolbar onSelectFileClick={handleSelectFileClick} />
@@ -968,9 +964,9 @@ export function CreateTaskForm({
           </DialogTitle>
           <DialogContent>
             <Grid container direction="row" wrap="nowrap">
-              <List dense className={classes.taskList} aria-label="Favorites Tasks">
+              <List dense className={classes.taskList} aria-label="작업 즐켜찾기">
                 <Typography variant="h6" component="div">
-                  Favorite tasks
+                  작업 즐겨찾기
                 </Typography>
                 {favoritesTasks.map((favoriteTask, index) => {
                   return (
@@ -1010,7 +1006,7 @@ export function CreateTaskForm({
                     <TextField
                       select
                       id="task-type"
-                      label="Task Category"
+                      label="작업 범주"
                       variant="outlined"
                       fullWidth
                       margin="normal"
@@ -1021,13 +1017,13 @@ export function CreateTaskForm({
                         value="clean"
                         disabled={!cleaningZones || cleaningZones.length === 0}
                       >
-                        Clean
+                        청소
                       </MenuItem>
                       <MenuItem
                         value="patrol"
                         disabled={!patrolWaypoints || patrolWaypoints.length === 0}
                       >
-                        Patrol
+                        이동
                       </MenuItem>
                       <MenuItem
                         value="delivery"
@@ -1036,7 +1032,7 @@ export function CreateTaskForm({
                           Object.keys(dropoffPoints).length === 0
                         }
                       >
-                        Delivery
+                        배송
                       </MenuItem>
                     </TextField>
                   </Grid>
@@ -1059,14 +1055,14 @@ export function CreateTaskForm({
                         });
                         updateTasks();
                       }}
-                      label="Start Time"
+                      label="시작 시간"
                       renderInput={(props) => <TextField {...props} />}
                     />
                   </Grid>
                   <Grid item xs={2}>
                     <PositiveIntField
                       id="priority"
-                      label="Priority"
+                      label="우선순위"
                       // FIXME(AA): The priority object is currently undefined.
                       value={(taskRequest.priority as Record<string, number>)?.value || 0}
                       onChange={(_ev, val) => {
@@ -1088,7 +1084,7 @@ export function CreateTaskForm({
                 {renderTaskDescriptionForm()}
                 <Grid container justifyContent="center">
                   <Button
-                    aria-label="Save as a favorite task"
+                    aria-label="작업 즐겨찾기에 저장"
                     variant="contained"
                     color="primary"
                     onClick={() => {
@@ -1098,7 +1094,7 @@ export function CreateTaskForm({
                     }}
                     style={{ marginTop: theme.spacing(2), marginBottom: theme.spacing(2) }}
                   >
-                    {callToUpdateFavoriteTask ? `Confirm edits` : 'Save as a favorite task'}
+                    {callToUpdateFavoriteTask ? `Confirm edits` : '작업 즐겨찾기에 저장'}
                   </Button>
                 </Grid>
               </Grid>
@@ -1109,7 +1105,7 @@ export function CreateTaskForm({
                     flexItem
                     style={{ marginLeft: theme.spacing(2), marginRight: theme.spacing(2) }}
                   />
-                  <List dense className={classes.taskList} aria-label="Tasks List">
+                  <List dense className={classes.taskList} aria-label="작업 목록">
                     {taskTitles.map((title, idx) => (
                       <ListItem
                         key={idx}
@@ -1133,7 +1129,7 @@ export function CreateTaskForm({
               className={classes.actionBtn}
               onClick={(ev) => onClose && onClose(ev, 'escapeKeyDown')}
             >
-              Cancel
+              취소
             </Button>
             <Button
               variant="contained"
@@ -1142,7 +1138,7 @@ export function CreateTaskForm({
               className={classes.actionBtn}
               onClick={() => setOpenSchedulingDialog(true)}
             >
-              {scheduleToEdit ? 'Edit schedule' : 'Add to Schedule'}
+              {scheduleToEdit ? 'Edit schedule' : '일정에 추가'}
             </Button>
             <Button
               variant="contained"
@@ -1214,7 +1210,7 @@ export function CreateTaskForm({
                     return { ...prev, startOn: date };
                   })
                 }
-                label="Start On"
+                label="시작 일자"
                 disabled={!scheduleEnabled}
                 renderInput={(props) => <TextField {...props} fullWidth />}
               />
@@ -1236,7 +1232,7 @@ export function CreateTaskForm({
                     });
                   }
                 }}
-                label="At"
+                label="에서"
                 disabled={!scheduleEnabled}
                 renderInput={(props) => <TextField {...props} fullWidth />}
               />

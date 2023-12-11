@@ -371,9 +371,9 @@ export const AppBar = React.memo(({ extraToolbarItems }: AppBarProps): React.Rea
           />
           {profile?.user.is_admin && (
             <AppBarTab
-              label="Admin"
+              label="관리자"
               value="admin"
-              aria-label="Admin"
+              aria-label="관리자"
               onTabClick={() => navigate(AdminRoute)}
             />
           )}

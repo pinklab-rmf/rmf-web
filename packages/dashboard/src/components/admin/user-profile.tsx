@@ -42,7 +42,7 @@ export function UserProfileCard({ user, makeAdmin }: UserProfileCardProps): JSX.
       <CardHeader
         title={user.username}
         titleTypographyProps={{ variant: 'h5' }}
-        subheader={user.is_admin ? 'Admin' : 'User'}
+        subheader={user.is_admin ? '관리자' : '사용자 '}
         avatar={<AccountIcon className={classes.avatar} />}
         action={
           <IconButton onClick={(ev) => setAnchorEl(ev.currentTarget)} aria-label="more actions">
@@ -57,7 +57,7 @@ export function UserProfileCard({ user, makeAdmin }: UserProfileCardProps): JSX.
             try {
               makeAdmin && (await safeAsync(makeAdmin(!user.is_admin)));
             } catch (e) {
-              showAlert('error', `Failed to change admin status: ${(e as Error).message}`);
+              showAlert('error', `관리자 상태 변경하는데 실패했습니다: ${(e as Error).message}`);
             } finally {
               setDisableAdminCheckbox(false);
             }
@@ -65,7 +65,7 @@ export function UserProfileCard({ user, makeAdmin }: UserProfileCardProps): JSX.
         >
           <FormControlLabel
             control={<Checkbox checked={user.is_admin} disabled={disableAdminCheckbox} />}
-            label="Admin"
+            label="관리자"
           />
         </MenuItem>
       </Menu>

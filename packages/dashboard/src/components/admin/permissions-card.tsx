@@ -90,9 +90,9 @@ export function PermissionsCard({
     <StyledPaper elevation={0} {...otherProps}>
       <Toolbar>
         <Typography variant="h6" className={classes.title}>
-          Permissions
+          권한
         </Typography>
-        <IconButton onClick={() => setOpenDialog(true)} aria-label="add permission">
+        <IconButton onClick={() => setOpenDialog(true)} aria-label="권한 추가">
           <AddIcon fontSize="large" />
         </IconButton>
       </Toolbar>
@@ -126,13 +126,13 @@ export function PermissionsCard({
                           } catch (e) {
                             showAlert(
                               'error',
-                              `Failed to remove permission: ${(e as Error).message}`,
+                              `권한을 삭제하는데 실패했습니다: ${(e as Error).message}`,
                             );
                           }
                         })
                       }
                     >
-                      Remove
+                      삭제
                     </Button>
                   </TableCell>
                 </TableRow>
