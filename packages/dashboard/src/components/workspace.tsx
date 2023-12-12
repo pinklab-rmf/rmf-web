@@ -145,7 +145,7 @@ export function ManagedWorkspace({ workspaceId }: ManagedWorkspaceProps) {
           }}
         >
           <Typography variant="h6">
-            앱<DesignModeIcon /> 바를 클릭하여 레이아웃을 사용자 정의하십시오.
+            아이콘 <DesignModeIcon /> 를 클릭하여 레이아웃을 사용자 정의하십시오.
           </Typography>
         </Box>
       )}

@@ -132,7 +132,7 @@ export const AlertDialog = React.memo((props: DialogAlertProps) => {
       <DialogActions>
         {onInspect ? (
           <Button size="small" variant="contained" onClick={onInspect} disabled={false} autoFocus>
-            검사
+            작업 확인
           </Button>
         ) : null}
         {acknowledged ? (
@@ -150,7 +150,7 @@ export const AlertDialog = React.memo((props: DialogAlertProps) => {
             disabled={false}
             autoFocus
           >
-            승인
+            확인
           </Button>
         )}
         <Button
@@ -162,7 +162,7 @@ export const AlertDialog = React.memo((props: DialogAlertProps) => {
           }}
           autoFocus
         >
-          {acknowledged ? 'Close' : '닫기'}
+          {acknowledged ? ' ' : '닫기'}
         </Button>
       </DialogActions>
     </Dialog>

@@ -76,7 +76,7 @@ export function TaskInfo({ task, title }: TaskInfoProps): JSX.Element {
       <div style={{ marginBottom: theme.spacing(1) }}></div>
       <InfoLine>
         <span>상태:</span>
-        <InfoValue>{task.status || 'unknown'}</InfoValue>
+        <InfoValue>{task.status || '알수없음'}</InfoValue>
       </InfoLine>
       <InfoLine>
         <span>시작 지점:</span>

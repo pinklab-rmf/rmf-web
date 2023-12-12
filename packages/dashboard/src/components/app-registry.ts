@@ -12,7 +12,7 @@ export const AppRegistry = {
   비콘: BeaconsApp,
   문: DoorsApp,
   리프트: LiftsApp,
-  맵: MapApp,
+  지도: MapApp,
   작업: TasksApp,
   '작업 세부 정보': TaskDetailsApp,
   '작업 로그': TaskLogsApp,

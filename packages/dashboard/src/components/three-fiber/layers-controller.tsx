@@ -51,7 +51,7 @@ export const LayersController = ({
         <TextField
           select
           id="level-select"
-          label="Levels"
+          label="층"
           variant="outlined"
           fullWidth
           margin="normal"

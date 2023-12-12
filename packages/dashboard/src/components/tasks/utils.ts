@@ -64,22 +64,22 @@ export function downloadCsvMinimal(timestamp: Date, allTasks: TaskState[]) {
     const values = [
       task.booking.unix_millis_request_time
         ? `${new Date(task.booking.unix_millis_request_time).toLocaleDateString()}`
-        : 'unknown',
-      task.booking.requester ? task.booking.requester : 'unknown',
+        : '알수없음',
+      task.booking.requester ? task.booking.requester : '알수없음',
       task.booking.id,
-      task.category ? task.category : 'unknown',
-      task.assigned_to ? task.assigned_to.name : 'unknown',
+      task.category ? task.category : '알수없음',
+      task.assigned_to ? task.assigned_to.name : '알수없음',
       task.unix_millis_start_time
         ? `${new Date(task.unix_millis_start_time).toLocaleDateString()} ${new Date(
             task.unix_millis_start_time,
           ).toLocaleTimeString()}`
-        : 'unknown',
+        : '알수없음',
       task.unix_millis_finish_time
         ? `${new Date(task.unix_millis_finish_time).toLocaleDateString()} ${new Date(
             task.unix_millis_finish_time,
           ).toLocaleTimeString()}`
-        : 'unknown',
-      task.status ? task.status : 'unknown',
+        : '알수없음',
+      task.status ? task.status : '알수없음',
     ];
     csvContent += values.join(columnSeparator) + rowSeparator;
   });

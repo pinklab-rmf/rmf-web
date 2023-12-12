@@ -299,26 +299,26 @@ export const TaskSchedule = () => {
           submitTasks={submitTasks}
           onSuccess={() => {
             setOpenCreateTaskForm(false);
-            showAlert('success', 'Successfully created task');
+            showAlert('success', '작업이 성공적으로 생성되었습니다');
           }}
           onFail={(e) => {
-            showAlert('error', `Failed to create task: ${e.message}`);
+            showAlert('error', `작업 생성 실패: ${e.message}`);
           }}
           onSuccessScheduling={() => {
             setOpenCreateTaskForm(false);
-            showAlert('success', 'Successfully created schedule');
+            showAlert('success', '일정이 성공적으로 생성되었습니다');
           }}
           onFailScheduling={(e) => {
-            showAlert('error', `Failed to submit schedule: ${e.message}`);
+            showAlert('error', `일정 제출 실패: ${e.message}`);
           }}
         />
       )}
       {openDeleteScheduleDialog && (
         <ConfirmationDialog
-          confirmText={'Ok'}
-          cancelText="Cancel"
+          confirmText={'확인'}
+          cancelText="취소"
           open={openDeleteScheduleDialog}
-          title={'Delete recurring event'}
+          title={'반복 이벤트 삭제'}
           submitting={undefined}
           onClose={() => {
             setOpenDeleteScheduleDialog(false);

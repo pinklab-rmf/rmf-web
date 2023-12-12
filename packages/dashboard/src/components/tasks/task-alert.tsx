@@ -96,7 +96,7 @@ export function TaskAlertDialog({ alert, removeAlert }: TaskAlertDialogProps): J
       content = [
         ...content,
         {
-          title: 'Error logs',
+          title: '오류 로그',
           value: consolidatedErrorMessages,
         },
       ];
@@ -112,8 +112,8 @@ export function TaskAlertDialog({ alert, removeAlert }: TaskAlertDialogProps): J
       content = [
         ...content,
         {
-          title: 'Logs',
-          value: `${completionTimeString}Task completed!`,
+          title: '로그',
+          value: `${completionTimeString}작업 완료!`,
         },
       ];
     }

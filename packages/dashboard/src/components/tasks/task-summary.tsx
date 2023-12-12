@@ -111,7 +111,7 @@ export const TaskSummary = React.memo((props: TaskSummaryProps) => {
 
   const getTaskPhaseDetails = (task: TaskState) => {
     if (!task.phases || !task.active) {
-      return 'Failed to retrieve current task phase';
+      return '현재 작업 단계를 검색하지 못했습니다';
     }
 
     const message = Object.values(task.phases)[task.active - 1]?.detail;
@@ -124,18 +124,18 @@ export const TaskSummary = React.memo((props: TaskSummaryProps) => {
       ? ` category ${Object.values(task.phases)[task.active - 1].category}`
       : '';
 
-    return `Failed to retrieve current task phase details of id ${task.booking.id}${categoryString}`;
+    return ` Id: ${task.booking.id}${categoryString}의 현재 작업 단계 세부 정보를 검색하지 못했습니다`;
   };
 
   const returnDialogContent = () => {
     const contents = [
       {
         title: 'ID',
-        value: taskState ? taskState.booking.id : 'Invalid task state.',
+        value: taskState ? taskState.booking.id : '작업 상태가 유효하지 않습니다.',
       },
       {
-        title: 'Current phase',
-        value: taskState ? getTaskPhaseDetails(taskState) : 'Invalid task state.',
+        title: '현재 단계',
+        value: taskState ? getTaskPhaseDetails(taskState) : '작업 상태가 유효하지 않습니다.',
       },
     ];
 

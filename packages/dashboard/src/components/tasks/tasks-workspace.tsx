@@ -7,6 +7,6 @@ export const tasksWorkspace: WorkspaceState = {
   ],
   windows: [
     { key: 'tasks', appName: '작업' },
-    { key: 'map', appName: '맵' },
+    { key: 'map', appName: '지도' },
   ],
 };

@@ -892,7 +892,7 @@ export function CreateTaskForm({
       setSavingFavoriteTask(false);
       onSuccessFavoriteTask &&
         onSuccessFavoriteTask(
-          `${!favoriteTaskBuffer.id ? `Created` : `Edited`}  favorite task successfully`,
+          `${!favoriteTaskBuffer.id ? `Created` : `Edited`}  작업 즐겨찾기 성공`,
           favoriteTaskBuffer,
         );
       setOpenFavoriteDialog(false);
@@ -914,7 +914,7 @@ export function CreateTaskForm({
       await deleteFavoriteTask(favoriteTaskBuffer);
       setDeletingFavoriteTask(false);
       onSuccessFavoriteTask &&
-        onSuccessFavoriteTask('Deleted favorite task successfully', favoriteTaskBuffer);
+        onSuccessFavoriteTask('작업 즐겨찾기에서 성공적으로 삭제되었습니다', favoriteTaskBuffer);
 
       setTaskRequests([defaultTask()]);
       setOpenFavoriteDialog(false);
@@ -1158,10 +1158,10 @@ export function CreateTaskForm({
       </StyledDialog>
       {openFavoriteDialog && (
         <ConfirmationDialog
-          confirmText={callToDeleteFavoriteTask ? 'Delete' : 'Save'}
-          cancelText="Back"
+          confirmText={callToDeleteFavoriteTask ? '삭제' : '저장'}
+          cancelText="뒤로"
           open={openFavoriteDialog}
-          title={callToDeleteFavoriteTask ? 'Confirm Delete' : 'Favorite Task'}
+          title={callToDeleteFavoriteTask ? '삭제 확인' : '작업 즐겨찾기'}
           submitting={callToDeleteFavoriteTask ? deletingFavoriteTask : savingFavoriteTask}
           onClose={() => {
             setOpenFavoriteDialog(false);
@@ -1176,12 +1176,12 @@ export function CreateTaskForm({
               onChange={(e) =>
                 setFavoriteTaskBuffer({ ...favoriteTaskBuffer, name: e.target.value })
               }
-              helperText="Required"
+              helperText="필수"
               error={favoriteTaskTitleError}
             />
           )}
           {callToDeleteFavoriteTask && (
-            <Typography>{`Are you sure you want to delete "${favoriteTaskBuffer.name}"?`}</Typography>
+            <Typography>{`"${favoriteTaskBuffer.name}" 정말로 삭제하시겠습니까?`}</Typography>
           )}
         </ConfirmationDialog>
       )}
