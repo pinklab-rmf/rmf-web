@@ -198,7 +198,7 @@ class TaskRepository:
                 seq=0,
                 tier=Tier.warning,
                 unix_millis_time=unix_millis_acknowledged_time,
-                text=f"Task completion acknowledged by {acknowledged_by}",
+                text=f"{acknowledged_by}에 의해 작업 완료 확인됨",
             )
             task_logs.phases = {
                 **task_logs.phases,

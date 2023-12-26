@@ -111,11 +111,11 @@ function TaskRow({ task, onClick }: TaskRowProps) {
         <TableCell>
           {task.unix_millis_start_time
             ? new Date(task.unix_millis_start_time).toLocaleDateString()
-            : 'unknown'}
+            : '알수없음'}
         </TableCell>
         <TableCell>{task.booking.id}</TableCell>
         <TableCell>{task.category}</TableCell>
-        <TableCell>{task.assigned_to ? task.assigned_to.name : 'unknown'}</TableCell>
+        <TableCell>{task.assigned_to ? task.assigned_to.name : '알수없음'}</TableCell>
         <TableCell>
           {task.unix_millis_start_time
             ? new Date(task.unix_millis_start_time).toLocaleTimeString()
@@ -126,7 +126,7 @@ function TaskRow({ task, onClick }: TaskRowProps) {
             ? new Date(task.unix_millis_finish_time).toLocaleTimeString()
             : '-'}
         </TableCell>
-        <TableCell className={taskStateCellClass}>{task.status || 'unknown'}</TableCell>
+        <TableCell className={taskStateCellClass}>{task.status || '알수없음'}</TableCell>
       </TableRow>
     </>
   );

@@ -14,11 +14,11 @@ import SecurityIcon from '@mui/icons-material/Security';
 import React from 'react';
 import { RouteProps, useNavigate, useLocation } from 'react-router';
 
-export type AdminDrawerValues = 'Users' | 'Roles';
+export type AdminDrawerValues = '사용자' | '역할';
 
 const drawerValuesRoutesMap: Record<AdminDrawerValues, RouteProps> = {
-  Users: { path: '/users' },
-  Roles: { path: '/roles' },
+  사용자: { path: '/users' },
+  역할: { path: '/roles' },
 };
 
 const prefix = 'drawer';
@@ -54,7 +54,7 @@ export function AdminDrawer(): JSX.Element {
       ([_k, v]) => location.pathname === `/admin${v.path}`,
     );
 
-    return matched ? (matched[0] as AdminDrawerValues) : 'Users';
+    return matched ? (matched[0] as AdminDrawerValues) : '사용자';
   }, [location.pathname]);
 
   const DrawerItem = React.useCallback(
@@ -82,8 +82,8 @@ export function AdminDrawer(): JSX.Element {
       <Toolbar />
       <div className={classes.drawerContainer}>
         <List>
-          <DrawerItem text="Users" route={'users'} Icon={AccountIcon} />
-          <DrawerItem text="Roles" route={'roles'} Icon={SecurityIcon} />
+          <DrawerItem text="사용자" route={'users'} Icon={AccountIcon} />
+          <DrawerItem text="역할" route={'roles'} Icon={SecurityIcon} />
         </List>
       </div>
     </StyledDrawer>

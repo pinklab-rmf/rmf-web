@@ -101,8 +101,8 @@ export function PermissionsCard({
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>Action</TableCell>
-                <TableCell>Authorization Group</TableCell>
+                <TableCell>동작</TableCell>
+                <TableCell>인가 그룹</TableCell>
                 <TableCell></TableCell>
               </TableRow>
             </TableHead>

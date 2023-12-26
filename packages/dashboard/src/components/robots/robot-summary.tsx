@@ -189,11 +189,11 @@ export const RobotSummary = React.memo(({ onClose, robot }: RobotSummaryProps) =
   const returnDialogContent = () => {
     const contents = [
       {
-        title: 'Assigned tasks',
-        value: taskState ? taskState.booking.id : 'No task',
+        title: '할당된 작업',
+        value: taskState ? taskState.booking.id : '작업 없음',
       },
       {
-        title: 'Est. end time',
+        title: '예상 종료 시간',
         value: taskState?.unix_millis_finish_time
           ? `${new Date(taskState?.unix_millis_finish_time).toLocaleString()}`
           : '-',
@@ -203,11 +203,11 @@ export const RobotSummary = React.memo(({ onClose, robot }: RobotSummaryProps) =
     if (taskState) {
       contents.push(
         {
-          title: 'Navigation start',
+          title: '내비게이션 시작',
           value: navigationStart ? navigationStart : '-',
         },
         {
-          title: 'Navigation destination',
+          title: '내비게이션 목적지',
           value: navigationDestination ? navigationDestination : '-',
         },
       );

@@ -137,7 +137,7 @@ export const AlertDialog = React.memo((props: DialogAlertProps) => {
         ) : null}
         {acknowledged ? (
           <Button size="small" variant="contained" disabled={true} autoFocus>
-            {acknowledgedBy ? `Acknowledged by ${acknowledgedBy}` : 'Acknowledged'}
+            {acknowledgedBy ? `${acknowledgedBy}에 의해 확인됨` : '확인'}
           </Button>
         ) : onAcknowledge === undefined ? null : (
           <Button
@@ -162,7 +162,7 @@ export const AlertDialog = React.memo((props: DialogAlertProps) => {
           }}
           autoFocus
         >
-          {acknowledged ? ' ' : '닫기'}
+          {acknowledged ? '닫기' : '닫기'}
         </Button>
       </DialogActions>
     </Dialog>

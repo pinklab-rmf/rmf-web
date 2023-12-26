@@ -115,7 +115,7 @@ export function TaskInspector({ task, onClose }: TableDataGridState): JSX.Elemen
                   {taskState ? (
                     <>
                       <CardContent sx={{ overflow: 'auto' }}>
-                        <TaskInfo task={taskState} title="Details" />
+                        <TaskInfo task={taskState} title="세부 정보" />
                       </CardContent>
                       <Grid item paddingLeft={2} paddingRight={2}>
                         <Button
@@ -151,7 +151,7 @@ export function TaskInspector({ task, onClose }: TableDataGridState): JSX.Elemen
                 />
                 <Grid item xs={6}>
                   <CardContent>
-                    <TaskLogs taskLog={taskLogs} taskState={taskState} title="Logs" />
+                    <TaskLogs taskLog={taskLogs} taskState={taskState} title="로그" />
                   </CardContent>
                 </Grid>
               </Grid>

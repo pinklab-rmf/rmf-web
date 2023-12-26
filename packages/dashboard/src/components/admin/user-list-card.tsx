@@ -128,7 +128,7 @@ export function UserListCard({
           <Table size="small">
             <TableHead>
               <TableRow>
-                <TableCell>Username</TableCell>
+                <TableCell>사용자 이름</TableCell>
                 <TableCell />
               </TableRow>
             </TableHead>
