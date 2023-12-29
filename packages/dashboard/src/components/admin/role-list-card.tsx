@@ -190,6 +190,8 @@ export function RoleListCard({
         <ConfirmationDialog
           open={!!selectedDeleteRole}
           title="삭제 확인"
+          confirmText="삭제"
+          cancelText="취소"
           submitting={!!deleting}
           onClose={() => setSelectedDeleteRole(null)}
           onSubmit={async () => {

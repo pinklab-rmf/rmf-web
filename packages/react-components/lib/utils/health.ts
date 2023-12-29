@@ -18,12 +18,12 @@ export enum HealthStatus {
 export function healthStatusToOpMode(healthStatus: string): string {
   switch (healthStatus) {
     case HealthStatus.Healthy:
-      return 'ONLINE';
+      return '온라인';
     case HealthStatus.Unhealthy:
-      return 'UNSTABLE';
+      return '불안정함';
     case HealthStatus.Dead:
-      return 'OFFLINE';
+      return '오프라인';
     default:
-      return `Unknown ${healthStatus}`;
+      return `알수없음 ${healthStatus}`;
   }
 }

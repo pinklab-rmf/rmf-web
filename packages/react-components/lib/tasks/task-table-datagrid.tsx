@@ -152,7 +152,7 @@ export function TaskDataGridTable({
                 ? `${new Date(
                     cellValues.row.booking.unix_millis_request_time,
                   ).toLocaleDateString()}`
-                : 'unknown'
+                : '알수없음'
             }
             InputProps={{ disableUnderline: true }}
             multiline
@@ -188,7 +188,7 @@ export function TaskDataGridTable({
       width: 150,
       editable: false,
       valueGetter: (params: GridValueGetterParams) =>
-        params.row.category ? params.row.category : 'unknown',
+        params.row.category ? params.row.category : '알수없음',
       flex: 1,
       filterOperators: getMinimalStringFilterOperators,
       filterable: true,
@@ -199,7 +199,7 @@ export function TaskDataGridTable({
       width: 150,
       editable: false,
       valueGetter: (params: GridValueGetterParams) =>
-        params.row.assigned_to ? params.row.assigned_to.name : 'unknown',
+        params.row.assigned_to ? params.row.assigned_to.name : '알수없음',
       flex: 1,
       filterOperators: getMinimalStringFilterOperators,
       filterable: true,
@@ -220,7 +220,7 @@ export function TaskDataGridTable({
                   ).toLocaleDateString()} ${new Date(
                     cellValues.row.unix_millis_start_time,
                   ).toLocaleTimeString()}`
-                : 'unknown'
+                : '알수없음'
             }
             InputProps={{ disableUnderline: true }}
             multiline
@@ -247,7 +247,7 @@ export function TaskDataGridTable({
                   ).toLocaleDateString()} ${new Date(
                     cellValues.row.unix_millis_finish_time,
                   ).toLocaleTimeString()}`
-                : 'unknown'
+                : '알수없음'
             }
             InputProps={{ disableUnderline: true }}
             multiline
@@ -263,7 +263,7 @@ export function TaskDataGridTable({
       headerName: '상태',
       editable: false,
       valueGetter: (params: GridValueGetterParams) =>
-        params.row.status ? params.row.status : 'unknown',
+        params.row.status ? params.row.status : '알수없음',
       flex: 1,
       filterOperators: getMinimalStringFilterOperators,
       filterable: true,

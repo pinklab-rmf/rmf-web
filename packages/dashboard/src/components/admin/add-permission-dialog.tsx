@@ -60,7 +60,8 @@ export function AddPermissionDialog({
     <ConfirmationDialog
       open={open}
       title="권한 추가"
-      confirmText="Save"
+      confirmText="추가"
+      cancelText="취소"
       submitting={saving}
       onSubmit={handleSubmit}
       onClose={() => setOpen && setOpen(false)}

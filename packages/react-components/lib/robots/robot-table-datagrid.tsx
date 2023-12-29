@@ -102,7 +102,7 @@ export function RobotDataGridTable({ onRobotClick, robots }: RobotDataGridTableP
     },
     {
       field: 'level',
-      headerName: '레벨',
+      headerName: '현재 층',
       width: 150,
       editable: false,
       valueGetter: (params: GridValueGetterParams) => params.row.level,

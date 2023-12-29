@@ -4,19 +4,19 @@ import type { TaskState } from 'api-client';
 export function taskTypeToStr(taskType: number): string {
   switch (taskType) {
     case RmfTaskType.TYPE_CHARGE_BATTERY:
-      return 'Charge';
+      return '충전';
     case RmfTaskType.TYPE_CLEAN:
-      return 'Clean';
+      return '청소';
     case RmfTaskType.TYPE_DELIVERY:
-      return 'Delivery';
+      return '배달';
     case RmfTaskType.TYPE_LOOP:
-      return 'Loop';
+      return '루프';
     case RmfTaskType.TYPE_PATROL:
-      return 'Patrol';
+      return '순찰';
     case RmfTaskType.TYPE_STATION:
-      return 'Station';
+      return '정거장';
     default:
-      return 'Unknown';
+      return '알수없음';
   }
 }
 

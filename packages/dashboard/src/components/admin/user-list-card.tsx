@@ -171,6 +171,8 @@ export function UserListCard({
           open={openDeleteDialog}
           title="삭제 확인"
           submitting={deleting}
+          confirmText="삭제"
+          cancelText="취소"
           onClose={() => setOpenDeleteDialog(false)}
           onSubmit={async () => {
             setDeleting(true);

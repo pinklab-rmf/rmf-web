@@ -340,21 +340,21 @@ export const AppBar = React.memo(({ extraToolbarItems }: AppBarProps): React.Rea
         <LogoButton src={brandingIconPath} alt="logo" sx={{ width: logoSize }} />
         <NavigationBar value={tabValue}>
           <AppBarTab
-            label="지도"
+            label="맵"
             value="infrastructure"
-            aria-label="지도"
+            aria-label="맵"
             onTabClick={() => navigate(DashboardRoute)}
           />
           <AppBarTab
-            label="시스템 개요"
+            label="시스템 제어"
             value="robots"
-            aria-label="시스템 개요"
+            aria-label="시스템 제어"
             onTabClick={() => navigate(RobotsRoute)}
           />
           <AppBarTab
-            label="작업"
+            label="작업 정보"
             value="tasks"
-            aria-label="작업"
+            aria-label="작업 정보"
             onTabClick={() => navigate(TasksRoute)}
           />
           <AppBarTab
@@ -545,23 +545,23 @@ export const AppBar = React.memo(({ extraToolbarItems }: AppBarProps): React.Rea
           tasksFromFile={tasksFromFile}
           onSuccess={() => {
             setOpenCreateTaskForm(false);
-            showAlert('success', 'Successfully created task');
+            showAlert('success', '작업이 성공적으로 생성되었습니다');
           }}
           onFail={(e) => {
-            showAlert('error', `Failed to create task: ${e.message}`);
+            showAlert('error', `작업 생성에 실패했습니다: ${e.message}`);
           }}
           onSuccessFavoriteTask={(message) => {
             showAlert('success', message);
           }}
           onFailFavoriteTask={(e) => {
-            showAlert('error', `Failed to create or delete favorite task: ${e.message}`);
+            showAlert('error', `즐겨찾기 작업을 생성하거나 삭제하는 데 실패했습니다: ${e.message}`);
           }}
           onSuccessScheduling={() => {
             setOpenCreateTaskForm(false);
-            showAlert('success', 'Successfully created schedule');
+            showAlert('success', '일정이 성공적으로 생성되었습니다');
           }}
           onFailScheduling={(e) => {
-            showAlert('error', `Failed to submit schedule: ${e.message}`);
+            showAlert('error', `일정 제출에 실패했습니다: ${e.message}`);
           }}
         />
       )}

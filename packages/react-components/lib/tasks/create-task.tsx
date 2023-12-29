@@ -155,7 +155,7 @@ interface FormToolbarProps {
 function FormToolbar({ onSelectFileClick }: FormToolbarProps) {
   return (
     <Button
-      aria-label="파일 선택"
+      aria-label="Select File"
       className={classes.selectFileBtn}
       variant="contained"
       color="primary"
@@ -628,7 +628,7 @@ const DaySelectorSwitch: React.VFC<DaySelectorSwitchProps> = ({ disabled, onChan
   return (
     <div>
       <TextField
-        label="주기"
+        label="반복 주기"
         color="primary"
         InputProps={{
           disabled: true,
@@ -1138,7 +1138,7 @@ export function CreateTaskForm({
               className={classes.actionBtn}
               onClick={() => setOpenSchedulingDialog(true)}
             >
-              {scheduleToEdit ? 'Edit schedule' : '일정에 추가'}
+              {scheduleToEdit ? '일정 수정' : '일정에 추가'}
             </Button>
             <Button
               variant="contained"
@@ -1187,10 +1187,10 @@ export function CreateTaskForm({
       )}
       {openSchedulingDialog && (
         <ConfirmationDialog
-          confirmText="Schedule"
-          cancelText="Cancel"
+          confirmText="일정 추가"
+          cancelText="취소"
           open={openSchedulingDialog}
-          title="Schedule Task"
+          title="작업 일정"
           submitting={false}
           onClose={() => setOpenSchedulingDialog(false)}
           onSubmit={(ev) => {
@@ -1232,7 +1232,7 @@ export function CreateTaskForm({
                     });
                   }
                 }}
-                label="에서"
+                label="시간"
                 disabled={!scheduleEnabled}
                 renderInput={(props) => <TextField {...props} fullWidth />}
               />
@@ -1247,7 +1247,7 @@ export function CreateTaskForm({
           </Grid>
           <Grid container marginTop={theme.spacing(1)} marginLeft={theme.spacing(0)}>
             <FormControl fullWidth={true}>
-              <FormHelperText>Ends</FormHelperText>
+              <FormHelperText>종료 일자</FormHelperText>
               <RadioGroup
                 aria-labelledby="controlled-radio-buttons-group"
                 name="controlled-radio-buttons-group"
@@ -1259,11 +1259,15 @@ export function CreateTaskForm({
                   <FormControlLabel
                     value={ScheduleUntilValue.NEVER}
                     control={<Radio />}
-                    label="Never"
+                    label="없음"
                   />
                 </Grid>
                 <Grid item xs={2} paddingLeft={theme.spacing(1)}>
-                  <FormControlLabel value={ScheduleUntilValue.ON} control={<Radio />} label="On" />
+                  <FormControlLabel
+                    value={ScheduleUntilValue.ON}
+                    control={<Radio />}
+                    label="종료일"
+                  />
                 </Grid>
                 <Grid item xs={4}>
                   <DatePicker

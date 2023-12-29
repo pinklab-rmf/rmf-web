@@ -52,7 +52,7 @@ function getRobotId(fleetName: string, robotName: string): string {
 }
 
 export const MapApp = styled(
-  createMicroApp('지도', () => {
+  createMicroApp('맵', () => {
     const rmf = React.useContext(RmfAppContext);
     const resourceManager = React.useContext(ResourcesContext);
     const [currentLevel, setCurrentLevel] = React.useState<Level | undefined>(undefined);

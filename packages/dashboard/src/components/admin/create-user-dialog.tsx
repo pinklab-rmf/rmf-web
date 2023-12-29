@@ -50,7 +50,8 @@ export function CreateUserDialog({
     <ConfirmationDialog
       open={open}
       title="사용자 생성"
-      confirmText="Create"
+      confirmText="생성"
+      cancelText="취소"
       submitting={creating}
       onSubmit={submitForm}
       onClose={() => setOpen && setOpen(false)}

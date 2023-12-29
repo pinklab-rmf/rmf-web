@@ -36,28 +36,28 @@ export const TaskLogs: React.FC<TaskLogsProps> = ({ taskLog, eventName, eventSta
     if (eventStatus == null) return theme.palette.warning.light;
 
     switch (eventStatus) {
-      case 'uninitialized':
-      case 'blocked':
-      case 'error':
-      case 'failed':
+      case '초기화되지 않음':
+      case '막힘':
+      case '에러':
+      case '실패':
         return theme.palette.error.dark;
 
-      case 'queued':
-      case 'standby':
+      case '작업대기 중':
+      case '대기':
         return theme.palette.info.light;
 
-      case 'underway':
+      case '진행 중':
         return theme.palette.success.light;
 
-      case 'delayed':
+      case '지연됨':
         return theme.palette.warning.main;
 
-      case 'skipped':
-      case 'canceled':
-      case 'killed':
+      case '스킵됨':
+      case '취소됨':
+      case '종료됨':
         return theme.palette.error.light;
 
-      case 'completed':
+      case '완료됨':
         return theme.palette.info.light;
 
       default:

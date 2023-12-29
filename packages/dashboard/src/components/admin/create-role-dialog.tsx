@@ -51,6 +51,7 @@ export function CreateRoleDialog({
       open={open}
       title="역할 생성"
       confirmText="생성"
+      cancelText="취소"
       submitting={creating}
       onSubmit={submitForm}
       onClose={() => setOpen && setOpen(false)}

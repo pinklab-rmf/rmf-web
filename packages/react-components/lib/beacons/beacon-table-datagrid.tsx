@@ -32,7 +32,7 @@ export function BeaconDataGridTable({ beacons }: BeaconDataGridTableProps): JSX.
             fontSize: 14,
           }}
         >
-          {params.row.online ? 'ONLINE' : 'OFFLINE'}
+          {params.row.online ? '온라인' : '오프라인'}
         </Typography>
       </Box>
     );
@@ -60,7 +60,7 @@ export function BeaconDataGridTable({ beacons }: BeaconDataGridTableProps): JSX.
             fontSize: 14,
           }}
         >
-          {params.row.activated ? 'ON' : 'OFF'}
+          {params.row.activated ? '켜기' : '끄기'}
         </Typography>
       </Box>
     );

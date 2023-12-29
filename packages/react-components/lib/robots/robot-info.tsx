@@ -6,12 +6,12 @@ import { LinearProgressBar } from './linear-progress-bar';
 
 function getTaskStatusDisplay(assignedTask?: string, taskStatus?: string) {
   if (assignedTask && !taskStatus) {
-    return 'Unknown';
+    return '알수없음';
   }
   if (assignedTask && taskStatus) {
     return taskStatus;
   } else {
-    return 'No Task';
+    return '작업 없음';
   }
 }
 
@@ -38,7 +38,7 @@ export interface RobotInfoProps {
   estFinishTime?: number;
 }
 
-const finishedStatus: TaskStatus[] = ['failed', 'completed', 'skipped', 'killed', 'canceled'];
+const finishedStatus: TaskStatus[] = ['실패', '완료됨', '스킵됨', '종료됨', '취소됨'];
 
 export function RobotInfo({
   robotName,
@@ -61,7 +61,7 @@ export function RobotInfo({
       <Grid container>
         <Grid container item xs={12} justifyContent="center">
           <Typography variant="h6" gutterBottom sx={{ textTransform: 'capitalize' }}>
-            {`Task Progress - ${getTaskStatusDisplay(assignedTask, taskStatus)}`}
+            {`작업 진행 상태 - ${getTaskStatusDisplay(assignedTask, taskStatus)}`}
           </Typography>
         </Grid>
         <Grid item xs={12}>
@@ -90,7 +90,7 @@ export function RobotInfo({
         </Grid>
         <Grid item xs={6}>
           <Typography variant="h6" align="left">
-            <span>{!hasConcreteEndTime && 'Est. '}종료 시간</span>
+            <span>{!hasConcreteEndTime && '예상 '}종료 시간</span>
           </Typography>
         </Grid>
         <Grid item xs={6}>

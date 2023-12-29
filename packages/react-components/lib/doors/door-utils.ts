@@ -31,31 +31,31 @@ export function doorModeToString(doorMode?: number): string {
   }
   switch (doorMode) {
     case RmfDoorMode.MODE_OPEN:
-      return 'OPEN';
+      return '열림';
     case RmfDoorMode.MODE_CLOSED:
-      return 'CLOSED';
+      return '닫힘';
     case RmfDoorMode.MODE_MOVING:
-      return 'MOVING';
+      return '이동중';
     default:
-      return 'UNKNOWN';
+      return '알수없음';
   }
 }
 
 export function doorTypeToString(doorType: number): string {
   switch (doorType) {
     case RmfDoor.DOOR_TYPE_DOUBLE_SLIDING:
-      return 'Double Sliding';
+      return '더블 슬라이딩';
     case RmfDoor.DOOR_TYPE_DOUBLE_SWING:
-      return 'Double Swing';
+      return '더블 스윙';
     case RmfDoor.DOOR_TYPE_DOUBLE_TELESCOPE:
-      return 'Double Telescope';
+      return '더블 텔레스코프';
     case RmfDoor.DOOR_TYPE_SINGLE_SLIDING:
-      return 'Single Sliding';
+      return '싱글 슬라이딩';
     case RmfDoor.DOOR_TYPE_SINGLE_SWING:
-      return 'Single Swing';
+      return '싱글 스윙';
     case RmfDoor.DOOR_TYPE_SINGLE_TELESCOPE:
-      return 'Single Telescope';
+      return '싱글 텔레스코프';
     default:
-      return `Unknown (${doorType})`;
+      return `알수없음 (${doorType})`;
   }
 }

@@ -6,17 +6,17 @@ export function liftModeToString(liftMode?: number): string {
   }
   switch (liftMode) {
     case RmfLiftState.MODE_AGV:
-      return 'AGV';
+      return '자율 주행 로봇';
     case RmfLiftState.MODE_EMERGENCY:
-      return 'Emergency';
+      return '비상 상황';
     case RmfLiftState.MODE_FIRE:
-      return 'Fire';
+      return '화재';
     case RmfLiftState.MODE_HUMAN:
-      return 'Human';
+      return '사람';
     case RmfLiftState.MODE_OFFLINE:
-      return 'Offline';
+      return '오프라인';
     default:
-      return `Unknown (${liftMode})`;
+      return `알수없음 (${liftMode})`;
   }
 }
 
@@ -25,13 +25,13 @@ export function doorStateToString(doorState?: number): string {
 
   switch (doorState) {
     case RmfLiftState.DOOR_OPEN:
-      return 'OPEN';
+      return '열림';
     case RmfLiftState.DOOR_CLOSED:
-      return 'CLOSED';
+      return '닫힘';
     case RmfLiftState.DOOR_MOVING:
-      return 'MOVING';
+      return '이동중';
     default:
-      return `UNKNOWN (${doorState})`;
+      return `알수없음 (${doorState})`;
   }
 }
 
@@ -57,9 +57,9 @@ export const requestModes = [
 ];
 
 export const requestModeStrings: Record<number, string> = {
-  [RmfLiftRequest.REQUEST_END_SESSION]: 'End Session',
-  [RmfLiftRequest.REQUEST_AGV_MODE]: 'AGV',
-  [RmfLiftRequest.REQUEST_HUMAN_MODE]: 'Human',
+  [RmfLiftRequest.REQUEST_END_SESSION]: '세션 종료',
+  [RmfLiftRequest.REQUEST_AGV_MODE]: '자율 주행 로봇',
+  [RmfLiftRequest.REQUEST_HUMAN_MODE]: '사람',
 };
 
 export function requestModeToString(requestMode: number): string {
@@ -69,8 +69,8 @@ export function requestModeToString(requestMode: number): string {
 export const requestDoorModes = [RmfLiftRequest.DOOR_OPEN, RmfLiftRequest.DOOR_CLOSED];
 
 export const requestDoorModeStrings: Record<number, string> = {
-  [RmfLiftRequest.DOOR_OPEN]: 'Open',
-  [RmfLiftRequest.DOOR_CLOSED]: 'Closed',
+  [RmfLiftRequest.DOOR_OPEN]: '열림',
+  [RmfLiftRequest.DOOR_CLOSED]: '닫힘',
 };
 
 export function requestDoorModeToString(requestDoorMode: number): string {

@@ -52,12 +52,12 @@ export function TaskAlertDialog({ alert, removeAlert }: TaskAlertDialogProps): J
 
   const getAlertTitle = (state: TaskState, errorLogEntries: LogEntry[]) => {
     if (state.status && state.status === Status.Completed) {
-      return 'Task completed';
+      return '작업 완료';
     }
     if (errorLogEntries.length !== 0) {
-      return 'Task error';
+      return '작업 에러';
     }
-    return 'Task alert';
+    return '작업 알림';
   };
 
   const getTaskProgress = (state: TaskState) => {
