@@ -38,7 +38,7 @@ export interface RobotInfoProps {
   estFinishTime?: number;
 }
 
-const finishedStatus: TaskStatus[] = ['실패', '완료됨', '스킵됨', '종료됨', '취소됨'];
+const finishedStatus: TaskStatus[] = ['failed', 'completed', 'skipped', 'killed', 'canceled'];
 
 export function RobotInfo({
   robotName,
